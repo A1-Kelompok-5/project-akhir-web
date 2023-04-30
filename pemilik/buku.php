@@ -1,34 +1,8 @@
 <?php
 session_start();
-include "koneksi.php";
-
-if(isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password'");
-    $data = mysqli_fetch_array($query);
-    $cekdata = mysqli_num_rows($query);
-
-if($cekdata > 0) {
-if($data['role']=="PEMILIK") {
-    $_SESSION['role']=$data['role'];
-    $_SESSION['username']=$data['username'];
-    header('location:pemilik/beranda.php');
-}elseif($data['role']=="ADMIN") {
-    $_SESSION['role']=$data['role'];
-    $_SESSION['username']=$data['username'];
-    header('location:admin/beranda.php');
-}elseif($data['role']=="PEMBELI") {
-    $_SESSION['role']=$data['role'];
-    $_SESSION['username']=$data['username'];
-    header('location:pembeli/beranda.php');
+if(!isset($_SESSION['role'])) {
+    header('location:../login.php');
 }
-}else{
-    echo "login gagal";
-}
-}
-
 ?>
 <!DOCTYPE html>
 <head>
@@ -37,7 +11,7 @@ if($data['role']=="PEMILIK") {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Masuk</title>
+    <title>Pemilik | Beranda</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -135,45 +109,43 @@ if($data['role']=="PEMILIK") {
         <!-- Header -->
         <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-top">
-        <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto fw-semibold text-gramedia text-decoration-none bg-gramedia">
-            <img src="img/logo_gramedia.png" width="30px">
+        <a href="beranda.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto fw-semibold text-gramedia text-decoration-none bg-gramedia">
+            <img src="../img/logo_gramedia.png" width="30px">
             <span class="fs-4 ms-3">Gramedia</span>
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="index.php" class="nav-link text-gramedia">Beranda</a></li>
-            <li class="nav-item"><a href="buku.php" class="nav-link text-gramedia" aria-current="page">Buku</a></li>
-            <li class="nav-item"><a href="login.php" class="nav-link active">Masuk</a></li>
+            <li class="nav-item"><a href="beranda.php" class="nav-link text-gramedia">Beranda</a></li>
+            <li class="nav-item"><a href="buku.php" class="nav-link active" aria-current="page">Buku</a></li>
+            <li class="nav-item"><a href="../logout.php" class="nav-link text-gramedia">Keluar</a></li>
         </ul>
         </header>
     </div>
+    
+    <!-- Bagian 1 -->
+    <div class="container text-center">
+        <img src="../img/bg1.png"></img>
+        <div class="row py-5">
+            <div class="col-lg-10 mx-auto"><br><br><br>
+                <h1 class="fw-semibold">Selamat Datang,  <?php echo $_SESSION['role']; ?>!</h1><br>
+                <p class="lead text-muted">
+                Gramedia.com adalah toko buku online terbesar dan terlengkap di Indonesia yang menyediakan aneka buku berkualitas, alat tulis hingga perlengkapan kantor lainnya.
+                Sejak tahun 2009 Gramedia membangun toko online. Toko ini merupakan bagian dari Toko Gramedia Matraman.
+                <br><br>Pada tahun 2016 hingga saat ini, Gramedia.com dikelola oleh PT. Gramedia Asri Media. Kini Gramedia.com telah terintegrasi dengan lebih dari 100 cabang toko Gramedia se-Indonesia. Para pelanggan dapat berbelanja dan melakukan pembelian dari Gramedia terdekat di kota Anda. Dan pengiriman pun dapat dilakukan dari seluruh toko Gramedia se-Indonesia.
+                </p>
+            </div>
+        </div>
+    </div>>
 
-    <!-- LOGIN -->
-    <div class="form-signin w-100 m-auto text-center">
-    <form method="post" action="">
-      <h1 class="h3 mb-3 fw-normal">Masuk</h1>
   
-      <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="username">
-        <label for="username">Username</label>
-      </div>
 
-      <div class="form-floating">
-        <input type="password" class="form-control" name="password">
-        <label for="password">Password</label>
-      </div>
-  
-      <button class="mt-5 w-100 btn btn-lg active" type="submit" name="login">Masuk</button>
-      <p class="mt-3 text-muted">Belum punya akun? <a href="daftar.php" class="link-info">Daftar disini</a></p>
-    </form>
-    </div>
 
-   <!-- Footer -->
-   <div class="container">
+    <!-- Footer -->
+    <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
             <a href="home.php" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-            <img src="img/logo_gramedia.png" width="20px">
+            <img src="../img/logo_gramedia.png" width="20px">
             </a>
             <span class="mb-3 mb-md-0 text-muted">&copy; 2023 Gramedia</span>
         </div>
