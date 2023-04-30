@@ -1,91 +1,108 @@
 <?php
 session_start();
 if(!isset($_SESSION['role'])) {
-    header('location:../login.php');
+    header('location:../../login.php');
 }
+
+require "koneksi.php";
+
+$query = "SELECT * FROM riwayat_transaksi";
+$result = mysqli_query($koneksi, $query);
+
+
 ?>
 <!DOCTYPE html>
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Admin | Buku</title>
+    <title>Admin | Data Riwayat Transaksi</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="../../style.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <style>
-        .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-        }
+            .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            }
 
-        @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-        }
-        }
+            @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+            }
 
-        .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
+            .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            }
 
-        .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-        }
+            .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+            }
 
-        .bi {
-        vertical-align: -.125em;
-        fill: #2c6fa5;
-        }
+            .bi {
+            vertical-align: -.125em;
+            fill: #2c6fa5;
+            }
 
-        .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-        }
+            .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+            }
 
-        .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-        }
+            .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            }
 
-        .text-justify {
-             text-align: justify;
-        }  
+            .text-justify {
+                text-align: justify;
+            }  
 
-        .bg-gramedia{
-            color: #2c6fa5;
-        }
+            .bg-gramedia{
+                color: #2c6fa5;
+            }
 
-        .text-gramedia{
-            color: #2c6fa5;
-        }
+            .text-gramedia{
+                color: #2c6fa5;
+            }
 
-        .active {
-            background-color: #2c6fa5 !important;
-            color: #ffff !important;
-        }
-</style>
-
+            .active {
+                background-color: #2c6fa5 !important;
+                color: #ffff !important;
+            }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 </head>
 <body>
 
@@ -110,39 +127,85 @@ if(!isset($_SESSION['role'])) {
         <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-top">
         <a href="beranda.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto fw-semibold text-gramedia text-decoration-none bg-gramedia">
-            <img src="../img/logo_gramedia.png" width="30px">
+            <img src="../../img/logo_gramedia.png" width="30px">
             <span class="fs-4 ms-3">Gramedia</span>
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="beranda.php" class="nav-link text-gramedia">Beranda</a></li>
-            <li class="nav-item"><a href="buku.php" class="nav-link active" aria-current="page">Buku</a></li>
-            <li class="nav-item"><a href="../logout.php" class="nav-link text-gramedia">Keluar</a></li>
+            <li class="nav-item"><a href="../beranda.php" class="nav-link text-gramedia" aria-current="page">Beranda</a></li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="data_user/user.php">Data User</a></li>
+                <li><a class="dropdown-item" href="data_buku/buku.php">Data Buku</a></li>
+                <li><a class="dropdown-item" href="data_transaksi/transaksi.php">Data Transaksi</a></li>
+                <li><a class="dropdown-item" href="data_riwayat_transaksi/riwayat_transaksi.php">Data Riwayat Transaksi</a></li>
+            </ul>
+            </li>
+            <li class="nav-item"><a href="../../logout.php" class="nav-link text-gramedia">Keluar</a></li>
         </ul>
         </header>
     </div>
     
     <!-- Bagian 1 -->
     <div class="container text-center">
-        <img src="../img/bg1.png"></img>
-        <div class="row py-5">
+        <img src="../../img/bg1.png"></img>
+        <div class="row py-2">
             <div class="col-lg-10 mx-auto"><br><br><br>
-                <h1 class="fw-semibold">Selamat Datang,  <?php echo $_SESSION['role']; ?>!</h1><br>
-                <p class="lead text-muted">
-                Gramedia.com adalah toko buku online terbesar dan terlengkap di Indonesia yang menyediakan aneka buku berkualitas, alat tulis hingga perlengkapan kantor lainnya.
-                Sejak tahun 2009 Gramedia membangun toko online. Toko ini merupakan bagian dari Toko Gramedia Matraman.
-                <br><br>Pada tahun 2016 hingga saat ini, Gramedia.com dikelola oleh PT. Gramedia Asri Media. Kini Gramedia.com telah terintegrasi dengan lebih dari 100 cabang toko Gramedia se-Indonesia. Para pelanggan dapat berbelanja dan melakukan pembelian dari Gramedia terdekat di kota Anda. Dan pengiriman pun dapat dilakukan dari seluruh toko Gramedia se-Indonesia.
+                <h1 class="fw-semibold">Data Riwayat Transaksi</h1><br>  
+                <p class="text-center">
+                     <a href="tambah.php" class="btn btn-secondary active">Tambah Data</a>
                 </p>
             </div>
         </div>
-    </div>>
+    </div>
+    
+      
+    <div class="container-sm">
+        <table class="table table-striped">
+            <caption class="text-center">Daftar Data Riwayat Transaksi</caption>
+            <thead class="text-center active">
+                <tr>
+                    <th>No</th>
+                    <th>ID Transaksi</th>
+                    <th>Tanggal</th>
+                    <th>Status</th>
+                    <th>Ubah</th>
+                    <th>Hapus</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <?php 
+                $i = 1;
+                while($row = mysqli_fetch_assoc($result)) { ?>
+                <tr>
+                    <td><?php echo $i ?></td>
+                    <td><?php echo $row["id_transaksi"] ?></td>
+                    <td><?php echo $row["tanggal"] ?></td>
+                    <td><?php echo $row["status"] ?></td>
+                    <td class="text-center">
+                        <a href="ubah.php?id=<?php echo $row['id'] ?>">
+                            <button class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>  
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="hapus.php?id=<?php echo $row['id'] ?>">
+                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                        </a>
+                    </td>
+                </tr>
+                <?php $i++ ?>
+                <?php } ?>
+            </tbody>
+        </table> 
+    </div>
 
     <!-- Footer -->
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
-            <a href="home.php" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-            <img src="../img/logo_gramedia.png" width="20px">
+            <a href="../beranda.php" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img src="../../img/logo_gramedia.png" width="20px">
             </a>
             <span class="mb-3 mb-md-0 text-muted">&copy; 2023 Gramedia</span>
         </div>
