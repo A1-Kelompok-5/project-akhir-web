@@ -1,0 +1,21 @@
+/* GLOBAL */
+*{
+  font-family: Tahoma;
+}
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}   
+
+
+/* LOGIN */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
