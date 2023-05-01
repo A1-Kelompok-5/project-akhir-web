@@ -111,7 +111,7 @@
     <ul class="nav nav-pills">
         <li class="nav-item"><a href="index.php" class="nav-link active" aria-current="page">Beranda</a></li>
         <li class="nav-item"><a href="buku.php" class="nav-link text-gramedia">Buku</a></li>
-        <li class="nav-item"><a href="logout.php" class="nav-link text-gramedia">Masuk</a></li>
+        <li class="nav-item"><a href="login.php" class="nav-link text-gramedia">Masuk</a></li>
     </ul>
     </header>
     </div>
