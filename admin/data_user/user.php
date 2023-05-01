@@ -6,7 +6,14 @@ if(!isset($_SESSION['role'])) {
 
 require "koneksi.php";
 
-$query = "SELECT * FROM user";
+// Cari Data
+if(isset($_POST["cari"])) {
+    $pencarian = $_POST["cari"];
+    $query = "SELECT * FROM user WHERE username LIKE '%".$pencarian."%' ORDER BY id_user asc";
+}else {
+    $query = "SELECT * FROM user ORDER BY id_user asc";
+}
+
 $result = mysqli_query($koneksi, $query);
 
 
@@ -160,6 +167,12 @@ $result = mysqli_query($koneksi, $query);
         </div>
     </div>
     
+    <div>
+        <form action="" method="post" style="text-align: center;">
+            <input type="text" name="cari" placeholder="username" autocomplete="off" autofocus size="50" value="<?php if(isset($_POST['cari'])){ echo $_POST['cari']; } ?>">
+            <button type="submit">Cari</button>
+        </form><br>
+    </div>
       
     <div class="container-sm">
         <table class="table table-striped">

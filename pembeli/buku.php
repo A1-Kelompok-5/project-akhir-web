@@ -6,7 +6,14 @@ if(!isset($_SESSION['role'])) {
 
 require "koneksi.php";
 
-$query = "SELECT * FROM buku";
+// Cari Data
+if(isset($_POST["cari"])) {
+    $pencarian = $_POST["cari"];
+    $query = "SELECT * FROM buku WHERE kategori LIKE '%".$pencarian."%' OR judul LIKE '%".$pencarian."%' OR penulis LIKE '%".$pencarian."%' ORDER BY id_buku asc";
+}else {
+    $query = "SELECT * FROM buku ORDER BY id_buku asc";
+}
+
 $result = mysqli_query($koneksi, $query);
 
 
@@ -158,6 +165,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
                 </p>
             </div>
         </div>
+    </div>
+
+    <div>
+        <form action="" method="post" style="text-align: center;">
+            <input type="text" name="cari" placeholder="kategori, judul, penulis" autocomplete="off" autofocus size="50" value="<?php if(isset($_POST['cari'])){ echo $_POST['cari']; } ?>">
+            <button type="submit">Cari</button>
+        </form><br>
     </div>
     
       
