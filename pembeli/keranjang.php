@@ -1,40 +1,16 @@
 <?php
 session_start();
-include "koneksi.php";
-
-if(isset($_POST['daftar'])) {
-    $nama = $_POST['nama'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $role = $_POST['role'];
-
-    $select = "SELECT * FROM user WHERE nama='$nama' && password='$password'";
-    $result = mysqli_query($koneksi, $select);
-    if(isset($error)) {
-        foreach($error as $error){
-            echo '$error';
-        }
-    }
-    if(mysqli_num_rows($result) > 0) {
-        $error[] = 'User Tidak ada';
-    }else{
-        $insert = "INSERT INTO user (nama, username, password, role) VALUES ('$nama', '$username', '$password', '$role')";
-        mysqli_query($koneksi, $insert);
-        header('location:login.php');
-    }
-
-    //$query = mysqli_query($koneksi, "INSERT INTO user (nama, username, password, role) VALUES ('$nama'.'$username','$password','$role')");
-    //mysqli_query($koneksi, $)
-    //if($query) {
-    //    echo "<script>alert('Selamat, pendaftaran anda berhasil. Silahkan login.')
-    //    location.href='login.php';</script>";
-    //}else{
-    //    "<script>alert('Pendaftaran gagal, Silahkan coba kembali.')</script>";
-    //}
-    
+if(!isset($_SESSION['role'])) {
+    header('location:../login.php');
 }
 
+require "koneksi.php";
+
+$query = "SELECT * FROM transaksi";
+$result = mysqli_query($koneksi, $query);
+
 ?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -42,11 +18,15 @@ if(isset($_POST['daftar'])) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Daftar</title>
+    <title>Pembeli | Keranjang Buku</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
     <style>
         .bd-placeholder-img {
         font-size: 1.125rem;
@@ -139,57 +119,72 @@ if(isset($_POST['daftar'])) {
 
     <!-- Header -->
     <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-top">
-    <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto fw-semibold text-gramedia text-decoration-none bg-gramedia">
-        <img src="img/logo_gramedia.png" width="30px">
-        <span class="fs-4 ms-3">Gramedia</span>
-    </a>
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-top">
+        <a href="beranda.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto fw-semibold text-gramedia text-decoration-none bg-gramedia">
+            <img src="../img/logo_gramedia.png" width="30px">
+            <span class="fs-4 ms-3">Gramedia</span>
+        </a>
 
-    <ul class="nav nav-pills">
-        <li class="nav-item"><a href="login.php" class="nav-link active" aria-current="page">Masuk</a></li>
-    </ul>
-    </header>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="beranda.php" class="nav-link text-gramedia" aria-current="page">Beranda</a></li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" aria-expanded="false">Buku</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="buku.php">Beli Buku</a></li>
+                <li><a class="dropdown-item" href="keranjang.php">Keranjang Buku</a></li>
+            </ul>
+            </li>
+            <li class="nav-item"><a href="../logout.php" class="nav-link text-gramedia">Keluar</a></li>
+        </ul>
+        </header>
+    </div>
+    
+    <!-- Bagian 1 -->
+    <div class="container text-center">
+        <img src="../img/bg1.png"></img>
+        <div class="row py-2">
+            <div class="col-lg-10 mx-auto"><br><br><br>
+                <h1 class="fw-semibold">Data Transaksi</h1><br><p class="text-center">
+                </p>
+            </div>
+        </div>
     </div>
 
-    <!-- DAFTAR -->
-    <div class="form-signin w-100 m-auto text-center">
-    <form method="post" action="">
-      <h1 class="h3 mb-3 fw-normal">Daftar</h1>
-  
-      <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="nama">
-        <label for="nama">Nama</label>
-      </div>
-
-      <div class="form-floating">
-        <input type="text" class="form-control" name="username">
-        <label for="username">Username</label>
-      </div>
-
-      <div class="form-floating">
-        <input type="password" class="form-control" name="password">
-        <label for="password">Password</label>
-      </div>
-
-      <div class="form-floating">
-        <select class="form-select" name="role">
-          <option value="PEMBELI" selected>Pembeli</option>
-        </select>
-        <label for="role">Role</label>
-      </div>
-  
-      <button class="mt-5 w-100 btn btn-lg active" type="submit" name="daftar">Daftar</button>
-      <p class="mt-3 text-muted">Sudah punya akun? <a href="login.php" class="link-info">Masuk disini</a></p>
-    </form>
+    <div class="container-sm">
+        <table class="table table-striped">
+            <caption class="text-center">Daftar Data Transaksi</caption>
+            <thead class="text-center active">
+                <tr>
+                    <th>No</th>
+                    <th>ID User</th>
+                    <th>ID Buku</th>
+                    <th>Jumlah Buku</th>
+                    <th>Total Harga</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <?php 
+                $i = 1;
+                while($row = mysqli_fetch_assoc($result)) { ?>
+                <tr>
+                    <td><?php echo $i ?></td>
+                    <td><?php echo $row["id_user"] ?></td>
+                    <td><?php echo $row["id_buku"] ?></td>
+                    <td><?php echo $row["jumlah"] ?></td>
+                    <td><?php echo $row["total"] ?></td>
+                </tr>
+                <?php $i++ ?>
+                <?php } ?>
+            </tbody>
+        </table> 
     </div>
-
 
     <!-- Footer -->
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
-            <a href="home.php" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-            <img src="img/logo_gramedia.png" width="20px">
+            <a href="../beranda.php" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img src="../../img/logo_gramedia.png" width="20px">
             </a>
             <span class="mb-3 mb-md-0 text-muted">&copy; 2023 Gramedia</span>
         </div>
