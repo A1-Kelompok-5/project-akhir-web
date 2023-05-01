@@ -14,18 +14,30 @@ if($cekdata > 0) {
 if($data['role']=="PEMILIK") {
     $_SESSION['role']=$data['role'];
     $_SESSION['username']=$data['username'];
-    header('location:pemilik/beranda.php');
+    echo "<script>
+        alert('Berhasil Login. ');
+        document.location.href = 'admin/beranda.php';
+        </script>";
 }elseif($data['role']=="ADMIN") {
     $_SESSION['role']=$data['role'];
     $_SESSION['username']=$data['username'];
-    header('location:admin/beranda.php');
+    echo "<script>
+        alert('Berhasil Login. ');
+        document.location.href = 'admin/beranda.php';
+        </script>";
 }elseif($data['role']=="PEMBELI") {
     $_SESSION['role']=$data['role'];
     $_SESSION['username']=$data['username'];
-    header('location:pembeli/beranda.php');
+    echo "<script>
+        alert('Berhasil Login. ');
+        document.location.href = 'pembeli/beranda.php';
+        </script>";
 }
 }else{
-    echo "login gagal";
+    echo "<script>
+    alert('Login Gagal, Username/Password Salah. ');
+    document.location.href = 'login.php';
+    </script>";
 }
 }
 
