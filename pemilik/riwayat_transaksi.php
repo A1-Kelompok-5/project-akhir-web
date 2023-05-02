@@ -6,7 +6,14 @@ if(!isset($_SESSION['role'])) {
 
 require "koneksi.php";
 
-$query = "SELECT * FROM riwayat_transaksi";
+// Cari Data
+if(isset($_POST["cari"])) {
+    $pencarian = $_POST["cari"];
+    $query = "SELECT * FROM riwayat_transaksi WHERE status LIKE '%".$pencarian."%' ORDER BY id asc";
+}else {
+    $query = "SELECT * FROM riwayat_transaksi ORDER BY id asc";
+}
+
 $result = mysqli_query($koneksi, $query);
 
 
@@ -153,6 +160,12 @@ $result = mysqli_query($koneksi, $query);
         </div>
     </div>
     
+    <div>
+        <form action="" method="post" style="text-align: center;">
+            <input type="text" name="cari" placeholder="status pembayaran" autocomplete="off" autofocus size="50" value="<?php if(isset($_POST['cari'])){ echo $_POST['cari']; } ?>">
+            <button type="submit">Cari</button>
+        </form><br>
+    </div>
       
     <div class="container-sm">
         <table class="table table-striped">
