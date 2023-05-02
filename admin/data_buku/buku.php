@@ -152,7 +152,6 @@ $result = mysqli_query($koneksi, $query);
             </li>
             <li class="nav-item"><a href="../../logout.php" class="nav-link text-gramedia">Keluar</a></li>
         </ul>
-
         </header>
     </div>
     
