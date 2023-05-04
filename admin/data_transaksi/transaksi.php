@@ -6,14 +6,7 @@ if(!isset($_SESSION['role'])) {
 
 require "koneksi.php";
 
-// Cari Data
-if(isset($_POST["cari"])) {
-    $pencarian = $_POST["cari"];
-    $query = "SELECT * FROM transaksi WHERE id_buku LIKE '%".$pencarian."%' ORDER BY id_transaksi asc";
-}else {
-    $query = "SELECT * FROM transaksi ORDER BY id_transaksi asc";
-}
-
+$query = "SELECT * FROM transaksi";
 $result = mysqli_query($koneksi, $query);
 
 
@@ -26,6 +19,11 @@ $result = mysqli_query($koneksi, $query);
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
     <title>Admin | Data Transaksi</title>
+
+    <!-- datatables -->
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -166,16 +164,9 @@ $result = mysqli_query($koneksi, $query);
             </div>
         </div>
     </div>
-    
-    <div>
-        <form action="" method="post" style="text-align: center;">
-            <input type="text" name="cari" placeholder="id buku" autocomplete="off" autofocus size="50" value="<?php if(isset($_POST['cari'])){ echo $_POST['cari']; } ?>">
-            <button type="submit">Cari</button>
-        </form><br>
-    </div>
       
     <div class="container-sm">
-        <table class="table table-striped">
+        <table id="example" class="display" style="width:100%">
             <caption class="text-center">Daftar Data Transaksi</caption>
             <thead class="text-center active">
                 <tr>
@@ -235,6 +226,11 @@ $result = mysqli_query($koneksi, $query);
     
     <!-- Script JS -->
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>
