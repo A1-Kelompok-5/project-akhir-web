@@ -28,6 +28,7 @@ if($data['role']=="PEMILIK") {
 }elseif($data['role']=="PEMBELI") {
     $_SESSION['role']=$data['role'];
     $_SESSION['username']=$data['username'];
+    $_SESSION['id_user']=$data['id_user'];
     echo "<script>
         alert('Berhasil Login.. ');
         document.location.href = 'pembeli/beranda.php';
