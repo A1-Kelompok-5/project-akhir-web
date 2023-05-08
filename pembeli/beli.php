@@ -23,7 +23,7 @@ if (!isset($_GET["id_buku"])){
 
 if(isset($_GET["beli"])){
 
-    $id_user = $_GET["id_user"];
+    $id_user = $_SESSION["id_user"];
     $id_buku = $_GET["id_buku"];
     $jumlah = $_GET["jumlah"];
     $total = $_GET["total"];
@@ -217,14 +217,15 @@ if(isset($_GET["beli"])){
     <!-- BELI BUKU -->
     <div class="form-signin w-100 m-auto text-center">
     <form method="get" action="">
+    <? php echo var_dump($_SESSION) ?>
       
-      <div class="form-floating mt-5">
+      <!-- <div class="form-floating mt-5">
         <input type="text" class="form-control" name="id_user">
         <label for="id_user">ID User</label>
-      </div>
+      </div> -->
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="id_buku">
+        <input type="text" class="form-control" name="id_buku" value="<?php echo $_GET['id_buku'] ?>">
         <label for="id_buku">ID Buku</label>
       </div>
 
