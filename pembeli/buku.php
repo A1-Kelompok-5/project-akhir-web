@@ -111,6 +111,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstr
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -192,7 +193,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
                     <td><?php echo $row["stock"] ?></td>
                     <td class="text-center">
                         <a href="beli.php?id_buku=<?php echo $row['id_buku'] ?>">
-                            <button class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>  
+                            <button class="btn btn-sm btn-success"><i class="fa fa-shopping-cart"></i></button>  
                         </a>
                     </td>
                 </tr>

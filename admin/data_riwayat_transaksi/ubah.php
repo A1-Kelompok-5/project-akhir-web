@@ -196,7 +196,7 @@ if(isset($_POST["ubah"])){
       <h1 class="h3 mb-3 fw-normal">Ubah Data Riwayat Transaksi</h1>
       <?php while($row = mysqli_fetch_assoc($result)) { ?>
     
-        <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+      <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
 
       <div class="form-floating mt-5">
         <input type="text" class="form-control" name="id_transaksi" value="<?php echo $row['id_transaksi'] ?>">

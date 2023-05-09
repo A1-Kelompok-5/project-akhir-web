@@ -8,11 +8,14 @@ require "koneksi.php";
 
 $id_user = $_SESSION["id_user"];
 
-///$query = "SELECT * FROM transaksi WHERE id_user='$id_user'";
-
 $query = "SELECT transaksi.id_transaksi, buku.judul, transaksi.jumlah, transaksi.total
              FROM transaksi INNER JOIN buku ON transaksi.id_buku=buku.id_buku WHERE id_user='$id_user'";
 $result = mysqli_query($koneksi, $query);
+
+// $query = "SELECT transaksi.id_transaksi AS a, buku.judul AS b, transaksi.jumlah AS c, transaksi.total AS d, riwayat_transaksi.status AS e
+//         FROM transaksi INNER JOIN buku ON transaksi.id_buku=buku.id_buku INNER JOIN riwayat_transaksi 
+//         ON transaksi.id_transaksi=riwayat_transaksi.id_transaksi WHERE id_user='$id_user'";
+// $result = mysqli_query($koneksi, $query);
 
 ?>
 
@@ -106,6 +109,15 @@ $result = mysqli_query($koneksi, $query);
             color: #ffff !important;
         }
 </style>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+/>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
@@ -164,13 +176,14 @@ $result = mysqli_query($koneksi, $query);
         <table id="example" class="display" style="width:100%">
             <? php echo var_dump($_SESSION) ?>
             <caption class="text-center">Daftar Keranjang Buku</caption>
-            <thead class="text-center active">
+            <thead class="active text-center">
                 <tr>
                     <th>No</th>
                     <th>ID Transaksi</th>
                     <th>Judul Buku</th>
                     <th>Jumlah Buku</th>
                     <th>Total Harga</th>
+                    <th>Bayar</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -183,12 +196,18 @@ $result = mysqli_query($koneksi, $query);
                     <td><?php echo $row["judul"] ?></td>
                     <td><?php echo $row["jumlah"] ?></td>
                     <td><?php echo $row["total"] ?></td>
+                    <td class="text-center">
+                        <a href="bayar.php?id_transaksi=<?php echo $row['id_transaksi'] ?>">
+                            <button class="btn btn-sm btn-success"><i class="material-icons">attach_money</i></button>  
+                        </a>
+                    </td>
                 </tr>
                 <?php $i++ ?>
                 <?php } ?>
             </tbody>
         </table> 
     </div>
+
 
     <!-- Footer -->
     <div class="container">
