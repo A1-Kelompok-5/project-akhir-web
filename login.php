@@ -15,14 +15,14 @@ if($data['role']=="PEMILIK") {
     $_SESSION['role']=$data['role'];
     $_SESSION['username']=$data['username'];
     echo "<script>
-        alert('Berhasil Login.. ');
+        alert('Berhasil Login. ');
         document.location.href = 'pemilik/beranda.php';
         </script>";
 }elseif($data['role']=="ADMIN") {
     $_SESSION['role']=$data['role'];
     $_SESSION['username']=$data['username'];
     echo "<script>
-        alert('Berhasil Login.. ');
+        alert('Berhasil Login. ');
         document.location.href = 'admin/beranda.php';
         </script>";
 }elseif($data['role']=="PEMBELI") {
@@ -30,7 +30,7 @@ if($data['role']=="PEMILIK") {
     $_SESSION['username']=$data['username'];
     $_SESSION['id_user']=$data['id_user'];
     echo "<script>
-        alert('Berhasil Login.. ');
+        alert('Berhasil Login. ');
         document.location.href = 'pembeli/beranda.php';
         </script>";
 }

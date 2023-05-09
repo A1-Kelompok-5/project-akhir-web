@@ -195,12 +195,7 @@ if(isset($_GET["keranjang"])){
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="total">
-        <label for="total">Total</label>
-      </div>
-
-      <div class="form-floating">
-        <input type="text" class="form-control" name="kategori" value="<?php echo $row['kategori'] ?>">
+        <input type="text" class="form-control" name="kategori" value="<?php echo $row['kategori'] ?>" readonly>
         <label for="kategori">Kategori</label>
       </div>
 
