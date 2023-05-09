@@ -6,7 +6,7 @@ if(!isset($_SESSION['role'])) {
 
 require "koneksi.php";
 
-$query = "SELECT * FROM transaksi";
+$query = "SELECT * FROM trans";
 $result = mysqli_query($koneksi, $query);
 
 ?>
@@ -161,10 +161,14 @@ $result = mysqli_query($koneksi, $query);
             <thead class="text-center active">
                 <tr>
                     <th>No</th>
-                    <th>ID User</th>
                     <th>ID Buku</th>
                     <th>Jumlah Buku</th>
                     <th>Total Harga</th>
+                    <th>kategori</th>
+                    <th>judul</th>
+                    <th>penulis</th>
+                    <th>harga</th>
+                    <th>stok</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -173,10 +177,14 @@ $result = mysqli_query($koneksi, $query);
                 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $row["id_user"] ?></td>
                     <td><?php echo $row["id_buku"] ?></td>
                     <td><?php echo $row["jumlah"] ?></td>
                     <td><?php echo $row["total"] ?></td>
+                    <td><?php echo $row["kategori"] ?></td>
+                    <td><?php echo $row["judul"] ?></td>
+                    <td><?php echo $row["penulis"] ?></td>
+                    <td><?php echo $row["harga"] ?></td>
+                    <td><?php echo $row["stok"] ?></td>
                 </tr>
                 <?php $i++ ?>
                 <?php } ?>

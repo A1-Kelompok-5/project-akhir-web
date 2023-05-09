@@ -65,7 +65,7 @@ if(isset($_POST["ubah"])){
     <title>Admin | Ubah Data User</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../style.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
@@ -180,10 +180,10 @@ if(isset($_POST["ubah"])){
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="data_user/user.php">Data User</a></li>
-                <li><a class="dropdown-item" href="data_buku/buku.php">Data Buku</a></li>
-                <li><a class="dropdown-item" href="data_transaksi/transaksi.php">Data Transaksi</a></li>
-                <li><a class="dropdown-item" href="data_riwayat_transaksi/riwayat_transaksi.php">Data Riwayat Transaksi</a></li>
+                <li><a class="dropdown-item" href="../data_user/user.php">Data User</a></li>
+                <li><a class="dropdown-item" href="../data_buku/buku.php">Data Buku</a></li>
+                <li><a class="dropdown-item" href="../data_transaksi/transaksi.php">Data Transaksi</a></li>
+                <li><a class="dropdown-item" href="../data_riwayat_transaksi/riwayat_transaksi.php">Data Riwayat Transaksi</a></li>
             </ul>
             </li>
             <li class="nav-item"><a href="../../logout.php" class="nav-link text-gramedia">Keluar</a></li>
@@ -249,7 +249,7 @@ if(isset($_POST["ubah"])){
     </div>
     
     <!-- Script JS -->
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>
