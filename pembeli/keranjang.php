@@ -10,8 +10,8 @@ $id_user = $_SESSION["id_user"];
 
 ///$query = "SELECT * FROM transaksi WHERE id_user='$id_user'";
 
-$query = "SELECT *
-            FROM transaksi INNER JOIN buku ON transaksi.id_buku=buku.id_buku WHERE id_user='$id_user'";
+$query = "SELECT transaksi.id_transaksi, buku.judul, transaksi.jumlah, transaksi.total
+             FROM transaksi INNER JOIN buku ON transaksi.id_buku=buku.id_buku WHERE id_user='$id_user'";
 $result = mysqli_query($koneksi, $query);
 
 ?>
@@ -171,11 +171,6 @@ $result = mysqli_query($koneksi, $query);
                     <th>Judul Buku</th>
                     <th>Jumlah Buku</th>
                     <th>Total Harga</th>
-                    <th>kategori</th>
-                    <th>judul</th>
-                    <th>penulis</th>
-                    <th>harga</th>
-                    <th>stok</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -188,11 +183,6 @@ $result = mysqli_query($koneksi, $query);
                     <td><?php echo $row["judul"] ?></td>
                     <td><?php echo $row["jumlah"] ?></td>
                     <td><?php echo $row["total"] ?></td>
-                    <td><?php echo $row["kategori"] ?></td>
-                    <td><?php echo $row["judul"] ?></td>
-                    <td><?php echo $row["penulis"] ?></td>
-                    <td><?php echo $row["harga"] ?></td>
-                    <td><?php echo $row["stock"] ?></td>
                 </tr>
                 <?php $i++ ?>
                 <?php } ?>
