@@ -6,12 +6,16 @@ if(!isset($_SESSION['role'])) {
 
 require "koneksi.php";
 
+<<<<<<< HEAD
+$query = "SELECT * FROM trans";
+=======
 $id_user = $_SESSION["id_user"];
 
 ///$query = "SELECT * FROM transaksi WHERE id_user='$id_user'";
 
 $query = "SELECT transaksi.id_transaksi, buku.judul, transaksi.jumlah, transaksi.total
             FROM transaksi INNER JOIN buku ON transaksi.id_buku=buku.id_buku WHERE id_user='$id_user'";
+>>>>>>> 83f199bd4fe483fb425b145938941786053e45f0
 $result = mysqli_query($koneksi, $query);
 
 ?>
@@ -167,10 +171,19 @@ $result = mysqli_query($koneksi, $query);
             <thead class="text-center active">
                 <tr>
                     <th>No</th>
+<<<<<<< HEAD
+                    <th>ID Buku</th>
+=======
                     <th>ID Transaksi</th>
                     <th>Judul Buku</th>
+>>>>>>> 83f199bd4fe483fb425b145938941786053e45f0
                     <th>Jumlah Buku</th>
                     <th>Total Harga</th>
+                    <th>kategori</th>
+                    <th>judul</th>
+                    <th>penulis</th>
+                    <th>harga</th>
+                    <th>stok</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -179,10 +192,19 @@ $result = mysqli_query($koneksi, $query);
                 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo $i ?></td>
+<<<<<<< HEAD
+                    <td><?php echo $row["id_buku"] ?></td>
+=======
                     <td><?php echo $row["id_transaksi"] ?></td>
                     <td><?php echo $row["judul"] ?></td>
+>>>>>>> 83f199bd4fe483fb425b145938941786053e45f0
                     <td><?php echo $row["jumlah"] ?></td>
                     <td><?php echo $row["total"] ?></td>
+                    <td><?php echo $row["kategori"] ?></td>
+                    <td><?php echo $row["judul"] ?></td>
+                    <td><?php echo $row["penulis"] ?></td>
+                    <td><?php echo $row["harga"] ?></td>
+                    <td><?php echo $row["stok"] ?></td>
                 </tr>
                 <?php $i++ ?>
                 <?php } ?>

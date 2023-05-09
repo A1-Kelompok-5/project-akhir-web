@@ -26,7 +26,7 @@ $result = mysqli_query($koneksi, $query);
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../style.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
@@ -141,10 +141,10 @@ $result = mysqli_query($koneksi, $query);
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="data_user/user.php">Data User</a></li>
-                <li><a class="dropdown-item" href="data_buku/buku.php">Data Buku</a></li>
-                <li><a class="dropdown-item" href="data_transaksi/transaksi.php">Data Transaksi</a></li>
-                <li><a class="dropdown-item" href="data_riwayat_transaksi/riwayat_transaksi.php">Data Riwayat Transaksi</a></li>
+                <li><a class="dropdown-item" href="../data_user/user.php">Data User</a></li>
+                <li><a class="dropdown-item" href="../data_buku/buku.php">Data Buku</a></li>
+                <li><a class="dropdown-item" href="../data_transaksi/transaksi.php">Data Transaksi</a></li>
+                <li><a class="dropdown-item" href="../data_riwayat_transaksi/riwayat_transaksi.php">Data Riwayat Transaksi</a></li>
             </ul>
             </li>
             <li class="nav-item"><a href="../../logout.php" class="nav-link text-gramedia">Keluar</a></li>
@@ -225,7 +225,7 @@ $result = mysqli_query($koneksi, $query);
     </div>
     
     <!-- Script JS -->
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#example').DataTable();
