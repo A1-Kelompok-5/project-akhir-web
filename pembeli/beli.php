@@ -21,15 +21,20 @@ if (!isset($_GET["id_buku"])){
     exit;
 }    
 
-if(isset($_GET["beli"])){
+if(isset($_GET["keranjang"])){
 
-    $id_user = $_GET["id_user"];
+    $id_user = $_SESSION["id_user"];
     $id_buku = $_GET["id_buku"];
     $jumlah = $_GET["jumlah"];
     $total = $_GET["total"];
 
     $query = "INSERT INTO transaksi VALUES ('','$id_user','$id_buku','$jumlah','$total')";
     mysqli_query($koneksi, $query);
+
+    //$stock = $_POST["stock"];
+    //$query = "UPDATE buku SET stock = '$stock' WHERE id_buku='$id_buku'";
+    //mysqli_query($koneksi, $query);
+    //return mysqli_affected_rows($koneksi);
 
     echo "<script>
         alert('Berhasil membeli buku');    
@@ -73,9 +78,11 @@ if(isset($_GET["belii"])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../style.css" rel="stylesheet">
-
+    
+    <script src="../assets/js/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
             .bd-placeholder-img {
             font-size: 1.125rem;
@@ -202,45 +209,81 @@ if(isset($_GET["belii"])){
       <?php while($row = mysqli_fetch_assoc($result)) { ?>
 
       <div class="form-floating mt-5">
-      <input type="text" class="form-control" name="id_buku" value="<?php echo $row['id_buku'] ?>">
+      <input type="hidden" class="form-control" name="id_buku" value="<?php echo $row['id_buku'] ?>" readonly>
         <label for="id_buku">ID Buku</label>
       </div>
 
       <div class="form-floating">
+<<<<<<< HEAD
         <input type="text" class="form-control" name="total">
         <label for="total">Total</label>
       </div>
 
       <div class="form-floating">
         <input type="text" class="form-control" name="kategori" value="<?php echo $row['kategori'] ?>">
+=======
+        <input type="text" class="form-control" name="kategori" value="<?php echo $row['kategori'] ?>" readonly>
+>>>>>>> 83f199bd4fe483fb425b145938941786053e45f0
         <label for="kategori">Kategori</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="judul" value="<?php echo $row['judul'] ?>">
+        <input type="text" class="form-control" name="judul" value="<?php echo $row['judul'] ?>" readonly>
         <label for="judul">Judul</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="penulis" value="<?php echo $row['penulis'] ?>">
+        <input type="text" class="form-control" name="penulis" value="<?php echo $row['penulis'] ?>" readonly>
         <label for="penulis">Penulis</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="harga" value="<?php echo $row['harga'] ?>">
+        <input type="number" class="form-control" name="harga" id="harga" value="<?php echo $row['harga'] ?>" readonly>
         <label for="harga">Harga</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="stock" value="<?php echo $row['stock'] ?>">
+        <input type="number" class="form-control" name="stock" id="stock" value="<?php echo $row['stock'] ?>" readonly>
         <label for="stock">Stok</label>
       </div>
 
+<<<<<<< HEAD
+=======
+      <?php } ?>
+    </form>
+    </div>
+
+
+    <!-- BELI BUKU -->
+    <div class="form-signin w-100 m-auto text-center">
+    <form method="get" action="">
+    <? php echo var_dump($_SESSION) ?>
+
       <div class="form-floating">
-        <input type="text" class="form-control" name="jumlah">
+        <input type="hidden" class="form-control" name="id_buku" value="<?php echo $_GET['id_buku'] ?>" readonly>
+        <label for="id_buku">ID Buku</label>
+      </div>
+
+      <!-- <div class="form-floating">
+        <input type="number" class="form-control" name="stock" id="stock" value="<?php echo $_GET["stock"] ?>" readonly>
+        <label for="stock">Stok</label>
+      </div> -->
+
+>>>>>>> 83f199bd4fe483fb425b145938941786053e45f0
+      <div class="form-floating">
+        <input type="number" class="form-control" name="jumlah" id="jumlah" step="any" min="0" value="0">
         <label for="jumlah">Jumlah</label>
       </div>
 
+<<<<<<< HEAD
+=======
+      <div class="form-floating">
+        <input type="text" class="form-control" name="total" id="total" value="0" readonly>
+        <label for="total">Total</label>
+      </div>
+  
+      <button class="mt-5 w-100 btn btn-lg active" type="submit" name="keranjang">Masukkan Keranjang</button>
+>>>>>>> 83f199bd4fe483fb425b145938941786053e45f0
       
 
       <button class="mt-5 w-100 btn btn-lg active" type="submit" name="belii">Beli</button>
@@ -268,6 +311,35 @@ if(isset($_GET["belii"])){
     </div>
     
     <!-- Script JS -->
+    <script type="text/javascript">
+    $("#harga").keyup(function(){   
+      var a = parseFloat($("#harga").val());
+      var b = parseFloat($("#jumlah").val());
+      var c = a*b;
+      $("#total").val(c);
+    });
+    
+    $("#jumlah").keyup(function(){
+      var a = parseFloat($("#harga").val());
+      var b = parseFloat($("#jumlah").val());
+      var c = a*b;
+      $("#total").val(c);
+
+      var x = parseFloat($("#stock").val());
+      var y = x-b;
+      $("#stock").val(y)
+
+    });
+
+    $("#stock").keyup(function(){
+      var x = parseFloat($("#stock").val());
+      var b = parseFloat($("#jumlah").val());
+      var y = x-b;
+      $("#stock").val(y);
+    });
+
+    </script>
+
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
