@@ -6,7 +6,12 @@ if(!isset($_SESSION['role'])) {
 
 require "koneksi.php";
 
-$query = "SELECT * FROM transaksi";
+$id_user = $_SESSION["id_user"];
+
+///$query = "SELECT * FROM transaksi WHERE id_user='$id_user'";
+
+$query = "SELECT transaksi.id_transaksi, buku.judul, transaksi.jumlah, transaksi.total
+            FROM transaksi INNER JOIN buku ON transaksi.id_buku=buku.id_buku WHERE id_user='$id_user'";
 $result = mysqli_query($koneksi, $query);
 
 ?>
@@ -149,7 +154,7 @@ $result = mysqli_query($koneksi, $query);
         <img src="../img/bg1.png"></img>
         <div class="row py-2">
             <div class="col-lg-10 mx-auto"><br><br><br>
-                <h1 class="fw-semibold">Data Transaksi</h1><br><p class="text-center">
+                <h1 class="fw-semibold">Keranjang Buku</h1><br><p class="text-center">
                 </p>
             </div>
         </div>
@@ -157,12 +162,13 @@ $result = mysqli_query($koneksi, $query);
 
     <div class="container-sm">
         <table id="example" class="display" style="width:100%">
-            <caption class="text-center">Daftar Data Transaksi</caption>
+            <? php echo var_dump($_SESSION) ?>
+            <caption class="text-center">Daftar Keranjang Buku</caption>
             <thead class="text-center active">
                 <tr>
                     <th>No</th>
-                    <th>ID User</th>
-                    <th>ID Buku</th>
+                    <th>ID Transaksi</th>
+                    <th>Judul Buku</th>
                     <th>Jumlah Buku</th>
                     <th>Total Harga</th>
                 </tr>
@@ -173,8 +179,8 @@ $result = mysqli_query($koneksi, $query);
                 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $row["id_user"] ?></td>
-                    <td><?php echo $row["id_buku"] ?></td>
+                    <td><?php echo $row["id_transaksi"] ?></td>
+                    <td><?php echo $row["judul"] ?></td>
                     <td><?php echo $row["jumlah"] ?></td>
                     <td><?php echo $row["total"] ?></td>
                 </tr>
