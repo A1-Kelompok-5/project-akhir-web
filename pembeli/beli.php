@@ -42,26 +42,7 @@ if(isset($_GET["keranjang"])){
     </script>";
 }
 
-if(isset($_GET["belii"])){
 
-  $id_trans = $_GET["id_trans"];
-  $id_buku = $_GET["id_buku"];
-  $jumlah = $_GET["jumlah"];
-  $total = $_GET["total"];
-  $kategori = $_GET["kategori"];
-  $judul = $_GET["judul"];
-  $penulis = $_GET["penulis"];
-  $harga = $_GET["harga"];
-  $stok = $_GET["stok"];
-
-  $query = "INSERT INTO trans VALUES ('','$id_buku','$id_trans','$jumlah','$total','$kategori','$judul','$penulis','$harga','$stok')";
-  mysqli_query($koneksi, $query);
-
-  echo "<script>
-      alert('Berhasil membeli buku');    
-      document.location.href = 'keranjang.php';
-  </script>";
-}
 
 
 
@@ -214,16 +195,12 @@ if(isset($_GET["belii"])){
       </div>
 
       <div class="form-floating">
-<<<<<<< HEAD
         <input type="text" class="form-control" name="total">
         <label for="total">Total</label>
       </div>
 
       <div class="form-floating">
         <input type="text" class="form-control" name="kategori" value="<?php echo $row['kategori'] ?>">
-=======
-        <input type="text" class="form-control" name="kategori" value="<?php echo $row['kategori'] ?>" readonly>
->>>>>>> 83f199bd4fe483fb425b145938941786053e45f0
         <label for="kategori">Kategori</label>
       </div>
 
@@ -247,8 +224,6 @@ if(isset($_GET["belii"])){
         <label for="stock">Stok</label>
       </div>
 
-<<<<<<< HEAD
-=======
       <?php } ?>
     </form>
     </div>
@@ -269,26 +244,20 @@ if(isset($_GET["belii"])){
         <label for="stock">Stok</label>
       </div> -->
 
->>>>>>> 83f199bd4fe483fb425b145938941786053e45f0
       <div class="form-floating">
         <input type="number" class="form-control" name="jumlah" id="jumlah" step="any" min="0" value="0">
         <label for="jumlah">Jumlah</label>
       </div>
 
-<<<<<<< HEAD
-=======
       <div class="form-floating">
         <input type="text" class="form-control" name="total" id="total" value="0" readonly>
         <label for="total">Total</label>
       </div>
   
       <button class="mt-5 w-100 btn btn-lg active" type="submit" name="keranjang">Masukkan Keranjang</button>
->>>>>>> 83f199bd4fe483fb425b145938941786053e45f0
-      
 
-      <button class="mt-5 w-100 btn btn-lg active" type="submit" name="belii">Beli</button>
 
-      <?php } ?>
+      <?php  ?>
     </form>
     </div>
 
