@@ -190,12 +190,12 @@ $result = mysqli_query($koneksi, $query);
                     <td><?php echo $row["jumlah"] ?></td>
                     <td><?php echo $row["total"] ?></td>
                     <td class="text-center">
-                        <a href="ubah.php?id_transaksi=<?php echo $row['id_transaksi'] ?>">
+                        <a href="ubah.php?id=<?php echo $row['id'] ?>">
                             <button class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>  
                         </a>
                     </td>
                     <td class="text-center">
-                        <a href="hapus.php?id_transaksi=<?php echo $row['id_transaksi'] ?>">
+                        <a href="hapus.php?id=<?php echo $row['id'] ?>">
                             <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                         </a>
                     </td>

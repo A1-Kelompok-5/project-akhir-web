@@ -6,12 +6,12 @@ if(!isset($_SESSION['role'])) {
 
 require "koneksi.php";
 
-$id_transaksi = $_GET["id_transaksi"];
+$id = $_GET["id"];
 
-$query = "SELECT * FROM transaksi WHERE id_transaksi='$id_transaksi'";
+$query = "SELECT * FROM transaksi WHERE id='$id'";
 $result = mysqli_query($koneksi, $query);
 
-if (!isset($_GET["id_transaksi"])){
+if (!isset($_GET["id"])){
     header("Location: transaksi.php");
     exit;
 }else if(mysqli_num_rows($result) == 1){
@@ -24,7 +24,7 @@ if (!isset($_GET["id_transaksi"])){
 function ubah($data){
     global $koneksi;
 
-    $id_transaksi = $_POST["id_transaksi"];
+    $id = $_POST["id"];
     $id_user = $_POST["id_user"];
     $id_buku = $_POST["id_buku"];
     $jumlah = $_POST["jumlah"];
@@ -35,7 +35,7 @@ function ubah($data){
                 id_buku = '$id_buku',
                 jumlah = '$jumlah',
                 total = '$total'
-                WHERE id_transaksi = '$id_transaksi'";
+                WHERE id = '$id'";
 
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
@@ -198,7 +198,7 @@ if(isset($_POST["ubah"])){
       <h1 class="h3 mb-3 fw-normal">Ubah Data Transaksi</h1>
       <?php while($row = mysqli_fetch_assoc($result)) { ?>
     
-        <input type="hidden" name="id_transaksi" value="<?php echo $row['id_transaksi'] ?>">
+        <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
 
       <div class="form-floating mt-5">
         <input type="text" class="form-control" name="id_user" value="<?php echo $row['id_user'] ?>">

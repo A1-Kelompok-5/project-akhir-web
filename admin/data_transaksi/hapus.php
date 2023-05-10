@@ -2,11 +2,11 @@
 
 require "koneksi.php";
 
-$id_transaksi = $_GET["id_transaksi"];
+$id = $_GET["id"];
 
-if($id_transaksi){
+if($id){
 
-    $query = "DELETE FROM transaksi WHERE id_transaksi=$id_transaksi";
+    $query = "DELETE FROM transaksi WHERE id=$id";
     mysqli_query($koneksi, $query);
 
     echo "<script>

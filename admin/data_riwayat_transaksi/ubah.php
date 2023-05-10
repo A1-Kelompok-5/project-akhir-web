@@ -24,16 +24,16 @@ if (!isset($_GET["id"])){
 function ubah($data){
     global $koneksi;
 
+    $id_riwayat = $_POST["id_riwayat"];
     $id = $_POST["id"];
-    $id_transaksi = $_POST["id_transaksi"];
     $tanggal = $_POST["tanggal"];
     $status = $_POST["status"];
 
     $query = "UPDATE riwayat_transaksi SET
-                id_transaksi = '$id_transaksi',
+                id = '$id',
                 tanggal = '$tanggal',
                 status = '$status'
-                WHERE id = '$id'";
+                WHERE id_riwayat = '$id_riwayat'";
 
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
@@ -196,11 +196,11 @@ if(isset($_POST["ubah"])){
       <h1 class="h3 mb-3 fw-normal">Ubah Data Riwayat Transaksi</h1>
       <?php while($row = mysqli_fetch_assoc($result)) { ?>
     
-      <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+      <input type="hidden" name="id_riwayat" value="<?php echo $row['id_riwayat'] ?>">
 
       <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="id_transaksi" value="<?php echo $row['id_transaksi'] ?>">
-        <label for="id_transaksi">ID Transaksi</label>
+        <input type="text" class="form-control" name="id" value="<?php echo $row['id'] ?>">
+        <label for="id">ID Transaksi</label>
       </div>
 
       <div class="form-floating">
