@@ -36,7 +36,7 @@ if($data['role']=="PEMILIK") {
 }
 }else{
     echo "<script>
-    alert('Login Gagal, Username/Password Salah. ');
+    alert('Login Gagal, Username/Password Salah.. ');
     document.location.href = 'login.php';
     </script>";
 }
