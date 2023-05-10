@@ -10,36 +10,36 @@ if(isset($_POST['login'])) {
     $data = mysqli_fetch_array($query);
     $cekdata = mysqli_num_rows($query);
 
-if($cekdata > 0) {
-if($data['role']=="PEMILIK") {
-    $_SESSION['role']=$data['role'];
-    $_SESSION['username']=$data['username'];
-    echo "<script>
-        alert('Berhasil Login. ');
-        document.location.href = 'pemilik/beranda.php';
-        </script>";
-}elseif($data['role']=="ADMIN") {
-    $_SESSION['role']=$data['role'];
-    $_SESSION['username']=$data['username'];
-    echo "<script>
-        alert('Berhasil Login. ');
-        document.location.href = 'admin/beranda.php';
-        </script>";
-}elseif($data['role']=="PEMBELI") {
-    $_SESSION['role']=$data['role'];
-    $_SESSION['username']=$data['username'];
-    $_SESSION['id_user']=$data['id_user'];
-    echo "<script>
-        alert('Berhasil Login. ');
-        document.location.href = 'pembeli/beranda.php';
-        </script>";
-}
-}else{
-    echo "<script>
-    alert('Login Gagal, Username/Password Salah. ');
-    document.location.href = 'login.php';
-    </script>";
-}
+// if($cekdata > 0) {
+// if($data['role']=="PEMILIK") {
+//     $_SESSION['role']=$data['role'];
+//     $_SESSION['username']=$data['username'];
+//     echo "<script>
+//         alert('Berhasil Login. ');
+//         document.location.href = 'pemilik/beranda.php';
+//         </script>";
+// }elseif($data['role']=="ADMIN") {
+//     $_SESSION['role']=$data['role'];
+//     $_SESSION['username']=$data['username'];
+//     echo "<script>
+//         alert('Berhasil Login. ');
+//         document.location.href = 'admin/beranda.php';
+//         </script>";
+// }elseif($data['role']=="PEMBELI") {
+//     $_SESSION['role']=$data['role'];
+//     $_SESSION['username']=$data['username'];
+//     $_SESSION['id_user']=$data['id_user'];
+//     echo "<script>
+//         alert('Berhasil Login. ');
+//         document.location.href = 'pembeli/beranda.php';
+//         </script>";
+// }
+// }else{
+//     echo "<script>
+//     alert('Login Gagal, Username/Password Salah. ');
+//     document.location.href = 'login.php';
+//     </script>";
+// }
 }
 
 ?>
@@ -51,6 +51,9 @@ if($data['role']=="PEMILIK") {
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
     <title>Masuk</title>
+
+    <!-- SWEET ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -198,7 +201,25 @@ if($data['role']=="PEMILIK") {
         </ul>
         </footer>
     </div>
-    
+
+    <?php
+    if($cekdata > 0) {
+        if($data['role']=="PEMILIK") {
+            $_SESSION['role']=$data['role'];
+            $_SESSION['username']=$data['username'];
+            echo "<script>
+                Swal.fire(
+                    'Good job!',
+                    'You clicked the button!',
+                    'success'
+                ).then(()=>{
+                    document.location.href = 'pemilik/beranda.php'
+                })
+                </script>";
+        }
+    }
+    ?>
+
     <!-- Script JS -->
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
