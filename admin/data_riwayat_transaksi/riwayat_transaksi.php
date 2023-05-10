@@ -184,7 +184,7 @@ $result = mysqli_query($koneksi, $query);
                 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $row["id_transaksi"] ?></td>
+                    <td><?php echo $row["id"] ?></td>
                     <td><?php echo $row["tanggal"] ?></td>
                     <td><?php echo $row["status"] ?></td>
                     <td class="text-center">
@@ -193,7 +193,7 @@ $result = mysqli_query($koneksi, $query);
                         </a>
                     </td>
                     <td class="text-center">
-                        <a href="hapus.php?id=<?php echo $row['id'] ?>">
+                        <a href="hapus.php?id_riwayat=<?php echo $row['id_riwayat'] ?>">
                             <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                         </a>
                     </td>

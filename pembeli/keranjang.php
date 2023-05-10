@@ -8,8 +8,8 @@ require "koneksi.php";
 
 $id_user = $_SESSION["id_user"];
 
-$query = "SELECT transaksi.id_transaksi, buku.judul, transaksi.jumlah, transaksi.total
-             FROM transaksi INNER JOIN buku ON transaksi.id_buku=buku.id_buku WHERE id_user='$id_user'";
+$query = "SELECT keranjang.id, buku.judul, keranjang.jumlah, keranjang.total
+             FROM keranjang INNER JOIN buku ON keranjang.id_buku=buku.id_buku WHERE id_user='$id_user'";
 $result = mysqli_query($koneksi, $query);
 
 // $query = "SELECT transaksi.id_transaksi AS a, buku.judul AS b, transaksi.jumlah AS c, transaksi.total AS d, riwayat_transaksi.status AS e
@@ -179,7 +179,7 @@ $result = mysqli_query($koneksi, $query);
             <thead class="active text-center">
                 <tr>
                     <th>No</th>
-                    <th>ID Transaksi</th>
+                    <th>ID Keranjang</th>
                     <th>Judul Buku</th>
                     <th>Jumlah Buku</th>
                     <th>Total Harga</th>
@@ -192,14 +192,22 @@ $result = mysqli_query($koneksi, $query);
                 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $row["id_transaksi"] ?></td>
+                    <td><?php echo $row["id"] ?></td>
                     <td><?php echo $row["judul"] ?></td>
                     <td><?php echo $row["jumlah"] ?></td>
                     <td><?php echo $row["total"] ?></td>
                     <td class="text-center">
-                        <a href="bayar.php?id_transaksi=<?php echo $row['id_transaksi'] ?>">
+                        <a href="bayar.php?id=<?php echo $row['id'] ?>">
                             <button class="btn btn-sm btn-success"><i class="material-icons">attach_money</i></button>  
                         </a>
+
+
+                        <!-- <button class="btn btn-sm btn-success" onclick="disable(this)">
+                                <a href="bayar.php?id_transaksi=<?php echo $row['id_transaksi'] ?>">
+                                    <i class="material-icons">attach_money</i>
+                                </a>
+                        </button>  -->
+
                     </td>
                 </tr>
                 <?php $i++ ?>
@@ -214,7 +222,7 @@ $result = mysqli_query($koneksi, $query);
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
             <a href="../beranda.php" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-            <img src="../../img/logo_gramedia.png" width="20px">
+            <img src="../img/logo_gramedia.png" width="20px">
             </a>
             <span class="mb-3 mb-md-0 text-muted">&copy; 2023 Gramedia</span>
         </div>
@@ -233,6 +241,11 @@ $result = mysqli_query($koneksi, $query);
         $(document).ready(function () {
             $('#example').DataTable();
         });
+    </script>
+    <script>
+        function disable(x){
+          x.disabled = True;  
+        };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>

@@ -28,8 +28,11 @@ if(isset($_GET["keranjang"])){
     $jumlah = $_GET["jumlah"];
     $total = $_GET["total"];
 
-    $query = "INSERT INTO transaksi VALUES ('','$id_user','$id_buku','$jumlah','$total')";
-    mysqli_query($koneksi, $query);
+    $query1 = "INSERT INTO transaksi VALUES ('','$id_user','$id_buku','$jumlah','$total')";
+    mysqli_query($koneksi, $query1);
+
+    $query2 = "INSERT INTO keranjang VALUES ('','$id_user','$id_buku','$jumlah','$total')";
+    mysqli_query($koneksi, $query2);
 
     //$stock = $_POST["stock"];
     //$query = "UPDATE buku SET stock = '$stock' WHERE id_buku='$id_buku'";
@@ -161,7 +164,7 @@ if(isset($_GET["keranjang"])){
         <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-top">
         <a href="beranda.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto fw-semibold text-gramedia text-decoration-none bg-gramedia">
-            <img src="../../img/logo_gramedia.png" width="30px">
+            <img src="../img/logo_gramedia.png" width="30px">
             <span class="fs-4 ms-3">Gramedia</span>
         </a>
 
@@ -257,7 +260,7 @@ if(isset($_GET["keranjang"])){
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
             <a href="../beranda.php" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-            <img src="../../img/logo_gramedia.png" width="20px">
+            <img src="../img/logo_gramedia.png" width="20px">
             </a>
             <span class="mb-3 mb-md-0 text-muted">&copy; 2023 Gramedia</span>
         </div>

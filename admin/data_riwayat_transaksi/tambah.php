@@ -8,11 +8,11 @@ require "koneksi.php";
 
 if(isset($_GET["tambah"])){
 
-    $id_transaksi = $_GET["id_transaksi"];
+    $id = $_GET["id"];
     $tanggal = $_GET["tanggal"];
     $status = $_GET["status"];
 
-    $query = "INSERT INTO riwayat_transaksi VALUES ('','$id_transaksi','$tanggal','$status')";
+    $query = "INSERT INTO riwayat_transaksi VALUES ('','$id','$tanggal','$status')";
     mysqli_query($koneksi, $query);
 
     echo "<script>
@@ -166,8 +166,8 @@ if(isset($_GET["tambah"])){
       <h1 class="h3 mb-3 fw-normal">Tambah Data Riwayat Transaksi</h1>
   
       <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="id_transaksi">
-        <label for="id_transaksi">ID Transaksi</label>
+        <input type="text" class="form-control" name="id">
+        <label for="id">ID Transaksi</label>
       </div>
 
       <div class="form-floating">

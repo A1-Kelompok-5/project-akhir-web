@@ -175,7 +175,7 @@ $result = mysqli_query($koneksi, $query);
                 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $row["id_transaksi"] ?></td>
+                    <td><?php echo $row["id"] ?></td>
                     <td><?php echo $row["tanggal"] ?></td>
                     <td><?php echo $row["status"] ?></td>
                 </tr>
