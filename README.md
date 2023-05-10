@@ -39,21 +39,21 @@ Pada web ini terdiri dari 4 role, yaitu Guest, Pembeli, Admin, dan Pemilik.
 ![Screenshot (67)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/097c78db-6520-403e-8b83-d5b5c035c485)
 
 2. Terdapat halaman Beli buku untuk pembeli melakukan pemesanan. Pada halaman beli buku terdapat table yang berisi buku yang dapat di pesan. Pilih salah satu buku yang ingin dipesan dengan cara mengklik tombol beli.
-![Screenshot (68)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/60a023e8-993e-4cc0-9123-5bc3cd9f8fd1)
+![Screenshot (140)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/57911d88-049d-44b1-b354-8f6edcc0fd86)
 
 3. Pada halaman berikutnya, menampilkan form untuk melakukan pemesanan. Pembeli hanya perlu menginput jumlah buku yang ingin dipesan.
-![Screenshot (70)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/aabb843c-b317-441f-bcaf-b30516745ed8)
+![Screenshot (141)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/b644a412-f210-404f-8b0d-50ca853905a1)
 
 4. Jika form sudah sesuai dengan buku yang ingin dipesan klik tombol masukkan keranjang, maka pesanan akan masuk kedalam keranjang.
 ![Screenshot (71)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/2cfe2a4a-3230-4290-9456-0891190ea2c2)
 
-6. Terdapat halaman Keranjang buku, Pada halaman ini terdapat table yang berisi buku yang sudah dimasukkan kedalam keranjang.  
-![Screenshot (72)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/b45efde7-ac08-4e50-b509-6d76ac0ef45d)
+5. Terdapat halaman Keranjang buku, Pada halaman ini terdapat table yang berisi buku yang sudah dimasukkan kedalam keranjang.  
+![Screenshot (142)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/5aa6dd3c-6ac9-41dd-a2cd-4064391e2efe)
 
-7. Jika ingin melakukan pembayaran pilih salah satu buku yang ingin dibayar dengan cara mengklik tombol bayar. 
+6. Jika ingin melakukan pembayaran pilih salah satu buku yang ingin dibayar dengan cara mengklik tombol bayar. 
 ![Screenshot (73)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/fc14d4fe-c6d5-42df-a896-6966a350cf42)
 
-8. Jika ingin keluar, pembeli dapat memilih halaman keluar dan akan kembali pada halaman login.
+7. Jika ingin keluar, pembeli dapat memilih halaman keluar dan akan kembali pada halaman login.
 ![Screenshot (74)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/0ef81cd9-0d91-4f63-87d1-8859cbb303ee)
 
 
@@ -91,8 +91,8 @@ Pada web ini terdiri dari 4 role, yaitu Guest, Pembeli, Admin, dan Pemilik.
 - Sorting Judul Buku
 ![Screenshot (138)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/ff8fef2a-6a4e-4076-8cd7-47578afd9cef)
 
-- Search
-![Screenshot (96)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/e6db4a57-6fd8-46b9-bf28-2bbf7fa91374)
+- Search kategori buku
+![Screenshot (143)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/8d45de61-5048-460d-8988-b87fd24d7c23)
 
 - Tambah Data
 ![Screenshot (88)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/f38f2047-aa3c-4dac-8b03-693ae1c8f18f)
