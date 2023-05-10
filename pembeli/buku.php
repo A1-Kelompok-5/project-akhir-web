@@ -176,7 +176,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
                     <th>Judul</th>
                     <th>Penulis</th>
                     <th>Harga</th>
-                    <th>Stok</th>
                     <th>Beli</th>
                 </tr>
             </thead>
@@ -190,7 +189,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
                     <td><?php echo $row["judul"] ?></td>
                     <td><?php echo $row["penulis"] ?></td>
                     <td><?php echo $row["harga"] ?></td>
-                    <td><?php echo $row["stock"] ?></td>
                     <td class="text-center">
                         <a href="beli.php?id_buku=<?php echo $row['id_buku'] ?>">
                             <button class="btn btn-sm btn-success"><i class="fa fa-shopping-cart"></i></button>  

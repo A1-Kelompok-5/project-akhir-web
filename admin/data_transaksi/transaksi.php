@@ -6,7 +6,8 @@ if(!isset($_SESSION['role'])) {
 
 require "koneksi.php";
 
-$query = "SELECT * FROM transaksi";
+$query = "SELECT id, user.nama, buku.judul, jumlah, total FROM transaksi INNER JOIN user ON 
+            transaksi.id_user=user.id_user INNER JOIN buku ON transaksi.id_buku=buku.id_buku;";
 $result = mysqli_query($koneksi, $query);
 
 
@@ -171,8 +172,8 @@ $result = mysqli_query($koneksi, $query);
             <thead class="text-center active">
                 <tr>
                     <th>No</th>
-                    <th>ID User</th>
-                    <th>ID Buku</th>
+                    <th>User</th>
+                    <th>Judul Buku</th>
                     <th>Jumlah Buku</th>
                     <th>Total Harga</th>
                     <th>Ubah</th>
@@ -185,8 +186,8 @@ $result = mysqli_query($koneksi, $query);
                 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $row["id_user"] ?></td>
-                    <td><?php echo $row["id_buku"] ?></td>
+                    <td><?php echo $row["nama"] ?></td>
+                    <td><?php echo $row["judul"] ?></td>
                     <td><?php echo $row["jumlah"] ?></td>
                     <td><?php echo $row["total"] ?></td>
                     <td class="text-center">
