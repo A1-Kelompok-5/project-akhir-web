@@ -171,7 +171,8 @@ Pada web ini terdiri dari 4 role, yaitu Guest, Pembeli, Admin, dan Pemilik.
 ![Screenshot (123)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/48a1cc83-46eb-4416-8756-79ebc4e97778)
 
 6. Terdapat halaman data buku yang berisi daftar buku, disini pemilik dapat melakukan Sorting dan Search pada data buku. Prosesnya sama seperti Sorting dan Search sebelumnya pada data user.
-![Uploading Screenshot (149).png…]()
+![Screenshot (120)](https://github.com/PanjiMugniRamadhanii/project-akhir-web/assets/120110592/0d8bdd71-c7a0-4dab-9fcc-74f85d4fe0b4)
+
 
 - Search judul buku
 ![Screenshot (150)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/9e8b7076-ff87-417d-8b70-e4760b91acc0)
