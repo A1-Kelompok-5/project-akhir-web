@@ -40,7 +40,7 @@ if(isset($_GET["keranjang"])){
     //return mysqli_affected_rows($koneksi);
 
     echo "<script>
-        alert('Berhasil membeli buku');    
+        alert('Buku berhasil dimasukkan ke keranjang');    
         document.location.href = 'keranjang.php';
     </script>";
 }
@@ -213,11 +213,6 @@ if(isset($_GET["keranjang"])){
         <label for="harga">Harga</label>
       </div>
 
-      <div class="form-floating">
-        <input type="number" class="form-control" name="stock" id="stock" value="<?php echo $row['stock'] ?>" readonly>
-        <label for="stock">Stok</label>
-      </div>
-
       <?php } ?>
     </form>
     </div>
@@ -232,11 +227,6 @@ if(isset($_GET["keranjang"])){
         <input type="hidden" class="form-control" name="id_buku" value="<?php echo $_GET['id_buku'] ?>" readonly>
         <label for="id_buku">ID Buku</label>
       </div>
-
-      <!-- <div class="form-floating">
-        <input type="number" class="form-control" name="stock" id="stock" value="<?php echo $_GET["stock"] ?>" readonly>
-        <label for="stock">Stok</label>
-      </div> -->
 
       <div class="form-floating">
         <input type="text" class="form-control" name="jumlah" id="jumlah" step="any" min="0" value="0">
@@ -287,20 +277,7 @@ if(isset($_GET["keranjang"])){
       var b = parseFloat($("#jumlah").val());
       var c = a*b;
       $("#total").val(c);
-
-      var x = parseFloat($("#stock").val());
-      var y = x-b;
-      $("#stock").val(y)
-
     });
-
-    $("#stock").keyup(function(){
-      var x = parseFloat($("#stock").val());
-      var b = parseFloat($("#jumlah").val());
-      var y = x-b;
-      $("#stock").val(y);
-    });
-
     </script>
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

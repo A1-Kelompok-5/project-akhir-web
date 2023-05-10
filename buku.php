@@ -151,7 +151,6 @@ $result = mysqli_query($koneksi, $query);
                     <th>Judul</th>
                     <th>Penulis</th>
                     <th>Harga</th>
-                    <th>Stok</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -164,7 +163,6 @@ $result = mysqli_query($koneksi, $query);
                     <td><?php echo $row["judul"] ?></td>
                     <td><?php echo $row["penulis"] ?></td>
                     <td><?php echo $row["harga"] ?></td>
-                    <td><?php echo $row["stock"] ?></td>
                 </tr>
                 <?php $i++ ?>
                 <?php } ?>

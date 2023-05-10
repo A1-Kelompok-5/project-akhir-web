@@ -12,9 +12,8 @@ if(isset($_GET["tambah"])){
     $judul = $_GET["judul"];
     $penulis = $_GET["penulis"];
     $harga = $_GET["harga"];
-    $stock = $_GET["stock"];
 
-    $query = "INSERT INTO buku VALUES ('','$kategori','$judul','$penulis','$harga','$stock')";
+    $query = "INSERT INTO buku VALUES ('','$kategori','$judul','$penulis','$harga')";
     mysqli_query($koneksi, $query);
 
     echo "<script>
@@ -184,11 +183,6 @@ if(isset($_GET["tambah"])){
       <div class="form-floating">
         <input type="text" class="form-control" name="harga">
         <label for="harga">Harga</label>
-      </div>
-
-      <div class="form-floating">
-        <input type="text" class="form-control" name="stock">
-        <label for="stock">Stok</label>
       </div>
   
       <button class="mt-5 w-100 btn btn-lg active" type="submit" name="tambah">Tambah</button>
