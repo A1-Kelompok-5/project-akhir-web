@@ -26,7 +26,7 @@ Pada web ini terdiri dari 4 role, yaitu Guest, Pembeli, Admin, dan Pemilik.
 ![Screenshot (63)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/8b2ec787-f752-4a1a-9063-7f74f796c8fe)
 
 2.	Pada halaman Buku menampilkan informasi terkait buku apa saja yang bisa di beli, tetapi jika ingin membeli guest harus mempunyai akun dan login terlebih dahulu
-![Screenshot (64)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/72d91f12-7e70-48c4-a065-f321a57620e6)
+![Screenshot (136)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/6ed6ff18-05e9-46dc-bd49-6306790be53f)
 
 3. Pada halaman Masuk merupakan tampilan untuk login. Jika guest telah mendaftar akun maka guest hanya memasukkan username dan password untuk login.
 ![Screenshot (65)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/68cdd7a4-a0c4-45f2-ae10-427239052f28)
@@ -86,11 +86,10 @@ Pada web ini terdiri dari 4 role, yaitu Guest, Pembeli, Admin, dan Pemilik.
 ![Screenshot (85)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/9c8cea90-2aad-48e1-8110-b484c89dd2f7)
 
 9. Terdapat halaman data buku yang berisi daftar buku, disini admin dapat melakukan Sorting, Search, dan CRUD pada data buku. Prosesnya sama seperti Sorting, Search, dan CRUD sebelumnya pada data user.
-![Screenshot (87)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/071b3c02-4b90-450a-b642-0fc42221c417)
+![Screenshot (137)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/8a43e9fd-6965-4b6a-944e-81c90a188c3c)
 
-- Sorting
-![Screenshot (94)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/263bb6f5-0df9-4f52-8b30-3db9893d48eb)
-![Screenshot (95)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/9a73c232-655f-4860-b6c3-84da46138ffc)
+- Sorting Judul Buku
+![Screenshot (138)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/ff8fef2a-6a4e-4076-8cd7-47578afd9cef)
 
 - Search
 ![Screenshot (96)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/e6db4a57-6fd8-46b9-bf28-2bbf7fa91374)
