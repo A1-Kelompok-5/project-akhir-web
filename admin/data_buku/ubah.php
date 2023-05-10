@@ -29,14 +29,12 @@ function ubah($data){
     $judul = $_POST["judul"];
     $penulis = $_POST["penulis"];
     $harga = $_POST["harga"];
-    $stock = $_POST["stock"];
 
     $query = "UPDATE buku SET
                 kategori = '$kategori',
                 judul = '$judul',
                 penulis = '$penulis',
-                harga = '$harga',
-                stock = '$stock'
+                harga = '$harga'
                 WHERE id_buku = '$id_buku'";
 
     mysqli_query($koneksi, $query);
@@ -220,11 +218,6 @@ if(isset($_POST["ubah"])){
       <div class="form-floating">
         <input type="text" class="form-control" name="harga" value="<?php echo $row['harga'] ?>">
         <label for="harga">Harga</label>
-      </div>
-
-      <div class="form-floating">
-        <input type="text" class="form-control" name="stock" value="<?php echo $row['stock'] ?>">
-        <label for="stock">Stok</label>
       </div>
   
       <button class="mt-5 w-100 btn btn-lg active" type="submit" name="ubah">Ubah</button>

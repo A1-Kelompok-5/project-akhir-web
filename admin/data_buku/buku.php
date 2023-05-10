@@ -176,7 +176,6 @@ $result = mysqli_query($koneksi, $query);
                     <th>Judul</th>
                     <th>Penulis</th>
                     <th>Harga</th>
-                    <th>Stok</th>
                     <th>Ubah</th>
                     <th>Hapus</th>
                 </tr>
@@ -191,7 +190,6 @@ $result = mysqli_query($koneksi, $query);
                     <td><?php echo $row["judul"] ?></td>
                     <td><?php echo $row["penulis"] ?></td>
                     <td><?php echo $row["harga"] ?></td>
-                    <td><?php echo $row["stock"] ?></td>
                     <td class="text-center">
                         <a href="ubah.php?id_buku=<?php echo $row['id_buku'] ?>">
                             <button class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>  
