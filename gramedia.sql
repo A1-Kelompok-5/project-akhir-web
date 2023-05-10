@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Bulan Mei 2023 pada 13.03
+-- Waktu pembuatan: 10 Bulan Mei 2023 pada 11.50
 -- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.1.12
+-- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,12 +70,34 @@ INSERT INTO `buku` (`id_buku`, `kategori`, `judul`, `penulis`, `harga`, `stock`)
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `keranjang`
+--
+
+CREATE TABLE `keranjang` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_buku` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `keranjang`
+--
+
+INSERT INTO `keranjang` (`id`, `id_user`, `id_buku`, `jumlah`, `total`) VALUES
+(17, 5, 1, 1, 84000),
+(18, 5, 5, 1, 101000);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `riwayat_transaksi`
 --
 
 CREATE TABLE `riwayat_transaksi` (
+  `id_riwayat` int(3) NOT NULL,
   `id` int(3) NOT NULL,
-  `id_transaksi` int(3) NOT NULL,
   `tanggal` date NOT NULL,
   `status` enum('BERHASIL','GAGAL') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -84,9 +106,10 @@ CREATE TABLE `riwayat_transaksi` (
 -- Dumping data untuk tabel `riwayat_transaksi`
 --
 
-INSERT INTO `riwayat_transaksi` (`id`, `id_transaksi`, `tanggal`, `status`) VALUES
+INSERT INTO `riwayat_transaksi` (`id_riwayat`, `id`, `tanggal`, `status`) VALUES
 (1, 1, '2023-04-29', 'BERHASIL'),
-(2, 2, '2023-04-29', 'GAGAL');
+(2, 2, '2023-04-29', 'GAGAL'),
+(35, 15, '2023-05-10', 'BERHASIL');
 
 -- --------------------------------------------------------
 
@@ -95,7 +118,7 @@ INSERT INTO `riwayat_transaksi` (`id`, `id_transaksi`, `tanggal`, `status`) VALU
 --
 
 CREATE TABLE `transaksi` (
-  `id_transaksi` int(3) NOT NULL,
+  `id` int(3) NOT NULL,
   `id_user` int(3) NOT NULL,
   `id_buku` int(3) NOT NULL,
   `jumlah` char(3) NOT NULL,
@@ -106,9 +129,12 @@ CREATE TABLE `transaksi` (
 -- Dumping data untuk tabel `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_buku`, `jumlah`, `total`) VALUES
+INSERT INTO `transaksi` (`id`, `id_user`, `id_buku`, `jumlah`, `total`) VALUES
 (1, 6, 13, '2', '202000'),
-(2, 6, 25, '3', '300000');
+(2, 6, 25, '3', '300000'),
+(21, 5, 2, '2', '144000'),
+(22, 5, 1, '1', '84000'),
+(23, 5, 5, '1', '101000');
 
 -- --------------------------------------------------------
 
@@ -149,17 +175,25 @@ ALTER TABLE `buku`
   ADD PRIMARY KEY (`id_buku`);
 
 --
+-- Indeks untuk tabel `keranjang`
+--
+ALTER TABLE `keranjang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_buku` (`id_buku`),
+  ADD KEY `id_user` (`id_user`);
+
+--
 -- Indeks untuk tabel `riwayat_transaksi`
 --
 ALTER TABLE `riwayat_transaksi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_transaksi` (`id_transaksi`);
+  ADD PRIMARY KEY (`id_riwayat`),
+  ADD KEY `id_transaksi` (`id`);
 
 --
 -- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`id_transaksi`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`),
   ADD KEY `id_buku` (`id_buku`);
 
@@ -180,16 +214,22 @@ ALTER TABLE `buku`
   MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
+-- AUTO_INCREMENT untuk tabel `keranjang`
+--
+ALTER TABLE `keranjang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT untuk tabel `riwayat_transaksi`
 --
 ALTER TABLE `riwayat_transaksi`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_riwayat` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
@@ -202,10 +242,11 @@ ALTER TABLE `user`
 --
 
 --
--- Ketidakleluasaan untuk tabel `riwayat_transaksi`
+-- Ketidakleluasaan untuk tabel `keranjang`
 --
-ALTER TABLE `riwayat_transaksi`
-  ADD CONSTRAINT `riwayat_transaksi_ibfk_1` FOREIGN KEY (`id_transaksi`) REFERENCES `transaksi` (`id_transaksi`);
+ALTER TABLE `keranjang`
+  ADD CONSTRAINT `keranjang_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id_buku`),
+  ADD CONSTRAINT `keranjang_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Ketidakleluasaan untuk tabel `transaksi`
