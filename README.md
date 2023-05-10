@@ -95,16 +95,16 @@ Pada web ini terdiri dari 4 role, yaitu Guest, Pembeli, Admin, dan Pemilik.
 ![Screenshot (143)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/8d45de61-5048-460d-8988-b87fd24d7c23)
 
 - Tambah Data
-![Screenshot (88)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/f38f2047-aa3c-4dac-8b03-693ae1c8f18f)
-![Screenshot (89)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/ca1a66ae-a1a4-48dc-90d2-b28c188ab1b7)
+![Screenshot (144)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/81cae7c9-342b-488f-8d3f-091d725c693c)
+![Screenshot (145)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/3237ea1b-8c4e-489c-a4d1-3e7b8bdf4635)
 
 - Ubah Data
-![Screenshot (90)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/7436814b-0998-4cd8-9f39-5fbdb6a841bb)
-![Screenshot (91)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/020b92bc-edf2-47e9-a8c1-5394db74d319)
+![Screenshot (146)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/0ca6eaf8-bde3-475d-98d4-8f3b743fe483)
+![Screenshot (147)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/fced544d-7369-4482-97b9-179cb9db73da)
 
 - Hapus Data
 ![Screenshot (92)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/b2a9189f-b678-4436-a6fb-ecd01f844768)
-![Screenshot (93)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/2cdf05b1-1525-47d5-a699-dc25307c2dcf)
+![Screenshot (148)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/055a570e-78ab-4ab0-a76b-5ae6a60eca43)
 
 10. Terdapat halaman data transaksi yang berisi daftar transaksi yang telah dilakukan pembeli sebelumnya, disini admin dapat melakukan Sorting, Search, dan CRUD pada data transaksi. Prosesnya sama seperti Sorting, Search, dan CRUD pada data sebelumnya.
 ![Screenshot (97)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/e0849a2c-1c96-4dc8-9b00-074031e07132)
@@ -171,14 +171,13 @@ Pada web ini terdiri dari 4 role, yaitu Guest, Pembeli, Admin, dan Pemilik.
 ![Screenshot (123)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/48a1cc83-46eb-4416-8756-79ebc4e97778)
 
 6. Terdapat halaman data buku yang berisi daftar buku, disini pemilik dapat melakukan Sorting dan Search pada data buku. Prosesnya sama seperti Sorting dan Search sebelumnya pada data user.
-![Screenshot (125)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/36b668cf-b918-4a44-ba44-78a4c171454b)
+![Uploading Screenshot (149).png…]()
 
-- Search
-![Screenshot (126)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/1dbe4484-0e48-42f4-a643-8fbfb72c821b)
+- Search judul buku
+![Screenshot (150)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/9e8b7076-ff87-417d-8b70-e4760b91acc0)
 
-- Sorting
-![Screenshot (127)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/d2898eb5-84aa-49e0-9b03-e89d8ee3ecc0)
-![Screenshot (128)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/ebc17074-f2b3-4fb9-8161-d370d894400e)
+- Sorting kategori
+![Screenshot (151)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/3252c1cb-235c-44f7-8ad1-796f70244414)
 
 7. Terdapat halaman data transaksi yang berisi daftar transaksi yang telah dilakukan pembeli sebelumnya, disini pemilik dapat melakukan Sorting dan Search pada data transaksi. Prosesnya sama seperti Sorting dan Search sebelumnya pada data user.
 ![Screenshot (129)](https://github.com/nurinayahalazh/project-akhir-web/assets/120065264/72766ff3-ae96-486e-a92e-cd18f3d686c1)
