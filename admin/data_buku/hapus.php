@@ -9,10 +9,18 @@ if($id_buku){
     $query = "DELETE FROM buku WHERE id_buku=$id_buku";
     mysqli_query($koneksi, $query);
 
-    echo "<script>
-        alert('Berhasil menghapus data');    
-        document.location.href = 'buku.php';
-    </script>";
-}
+    echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Berhasil Menghapus Buku',
+            showConfirmButton: false,
+            timer: 1500
+        }).then(() => {
+            window.location.href = 'buku.php';
+        });
+        </script></body>";
+    }
 
 ?>

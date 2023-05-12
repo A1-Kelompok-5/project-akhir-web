@@ -39,10 +39,23 @@ if(isset($_GET["keranjang"])){
     //mysqli_query($koneksi, $query);
     //return mysqli_affected_rows($koneksi);
 
-    echo "<script>
-        alert('Buku berhasil dimasukkan ke keranjang');    
-        document.location.href = 'keranjang.php';
-    </script>";
+    // echo "<script>
+    //     alert('Buku berhasil dimasukkan ke keranjang');    
+    //     document.location.href = 'keranjang.php';
+    // </script>";
+
+    echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+          <script>
+            Swal.fire({
+              position: 'top-center',
+              icon: 'success',
+              title: 'Buku Berhasil Di Masukkan Ke Keranjang.',
+              showConfirmButton: false,
+              timer: 1500
+          }).then(() => {
+              window.location.href = 'keranjang.php';
+          });
+        </script></body>";
 }
 ?>
 
@@ -54,6 +67,9 @@ if(isset($_GET["keranjang"])){
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
     <title>Pembeli | Beli Buku</title>
+
+    <!-- SWEET ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">

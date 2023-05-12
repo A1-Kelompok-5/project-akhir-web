@@ -16,10 +16,18 @@ if(isset($_GET["tambah"])){
     $query = "INSERT INTO buku VALUES ('','$kategori','$judul','$penulis','$harga')";
     mysqli_query($koneksi, $query);
 
-    echo "<script>
-        alert('Berhasil menambahkan data');    
-        document.location.href = 'buku.php';
-    </script>";
+    echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Berhasil Menambahkan Data Buku',
+            showConfirmButton: false,
+            timer: 1500
+        }).then(() => {
+            window.location.href = 'buku.php';
+        });
+        </script></body>";
 }
 
 ?>

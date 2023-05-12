@@ -10,36 +10,71 @@ if(isset($_POST['login'])) {
     $data = mysqli_fetch_array($query);
     $cekdata = mysqli_num_rows($query);
 
-if($cekdata > 0) {
-if($data['role']=="PEMILIK") {
-    $_SESSION['role']=$data['role'];
-    $_SESSION['username']=$data['username'];
-    echo "<script>
-        alert('Berhasil Login. ');
-        document.location.href = 'pemilik/beranda.php';
-        </script>";
-}elseif($data['role']=="ADMIN") {
-    $_SESSION['role']=$data['role'];
-    $_SESSION['username']=$data['username'];
-    echo "<script>
-        alert('Berhasil Login. ');
-        document.location.href = 'admin/beranda.php';
-        </script>";
-}elseif($data['role']=="PEMBELI") {
-    $_SESSION['role']=$data['role'];
-    $_SESSION['username']=$data['username'];
-    $_SESSION['id_user']=$data['id_user'];
-    echo "<script>
-        alert('Berhasil Login. ');
-        document.location.href = 'pembeli/beranda.php';
-        </script>";
-}
-}else{
-    echo "<script>
-    alert('Login Gagal, Username/Password Salah.. ');
-    document.location.href = 'login.php';
-    </script>";
-}
+    if($cekdata > 0) {
+        if($data['role']=="PEMILIK") {
+            $_SESSION['role']=$data['role'];
+            $_SESSION['username']=$data['username'];
+            echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script>
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Berhasil Login',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    window.location.href = 'pemilik/beranda.php';
+                });
+                </script></body>";
+            exit;
+        } elseif($data['role']=="ADMIN") {
+            $_SESSION['role']=$data['role'];
+            $_SESSION['username']=$data['username'];
+            echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script>
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Berhasil Login',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    window.location.href = 'admin/beranda.php';
+                });
+                </script></body>";
+            exit;
+        } elseif($data['role']=="PEMBELI") {
+            $_SESSION['role']=$data['role'];
+            $_SESSION['username']=$data['username'];
+            $_SESSION['id_user']=$data['id_user'];
+            echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script>
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Berhasil Login',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    window.location.href = 'pembeli/beranda.php';
+                });
+                </script></body>";
+            exit;
+        }
+        
+    }
+    echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+        Swal.fire({
+            position: 'top-center',
+            icon: 'error',
+            title: 'Login Gagal, Coba Lagi!',
+            showConfirmButton: false,
+            timer: 1500
+        }).then(() => {
+            window.location.href = 'login.php';
+        });
+    </script></body>";
 }
 
 ?>
@@ -201,67 +236,6 @@ if($data['role']=="PEMILIK") {
         </ul>
         </footer>
     </div>
-
-    <!-- <?php
-    // if($cekdata > 0) {
-    //     if($data['role']=="PEMILIK") {
-    //         $_SESSION['role']=$data['role'];
-    //         $_SESSION['username']=$data['username'];
-    //         echo "<script>
-    //             Swal.fire({
-    //                 position: 'top-center',
-    //                 icon: 'success',
-    //                 title: 'Berhasil Login',
-    //                 showConfirmButton: false,
-    //                 timer: 1500
-    //             }).then(() => {
-    //                 window.location.href = 'pemilik/beranda.php';
-    //             });
-    //             </script>";
-    //     } elseif($data['role']=="ADMIN") {
-    //         $_SESSION['role']=$data['role'];
-    //         $_SESSION['username']=$data['username'];
-    //         echo "<script>
-    //             Swal.fire({
-    //                 position: 'top-center',
-    //                 icon: 'success',
-    //                 title: 'Berhasil Login',
-    //                 showConfirmButton: false,
-    //                 timer: 1500
-    //             }).then(() => {
-    //                 window.location.href = 'admin/beranda.php';
-    //             });
-    //             </script>";
-    //     } elseif($data['role']=="PEMBELI") {
-    //         $_SESSION['role']=$data['role'];
-    //         $_SESSION['username']=$data['username'];
-    //         $_SESSION['id_user']=$data['id_user'];
-    //         echo "<script>
-    //             Swal.fire({
-    //                 position: 'top-center',
-    //                 icon: 'success',
-    //                 title: 'Berhasil Login',
-    //                 showConfirmButton: false,
-    //                 timer: 1500
-    //             }).then(() => {
-    //                 window.location.href = 'pembeli/beranda.php';
-    //             });
-    //             </script>";
-    //     } else {
-    //         echo "<script>
-    //             Swal.fire({
-    //                 position: 'top-center',
-    //                 icon: 'error',
-    //                 title: 'Login Gagal, Coba Lagi!',
-    //                 showConfirmButton: false,
-    //                 timer: 1500
-    //             }).then(() => {
-    //                 window.location.href = 'login.php';
-    //             });
-    //         </script>";
-    //     }
-    // }
-?> -->
 
     <!-- Script JS -->
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
