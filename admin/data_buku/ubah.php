@@ -43,14 +43,31 @@ function ubah($data){
 
 if(isset($_POST["ubah"])){
     if( ubah($_POST) > 0){
-        echo "<script>
-                alert('Berhasil mengubah data');    
-                document.location.href = 'buku.php';
-            </script>";
+        echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script>
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Berhasil Mengubah Data Buku',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    window.location.href = 'buku.php';
+                });
+                </script></body>";
     }else{
-        echo "<script>
-                alert('Gagal mengubah data');    
-            </script>";
+        echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script>
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'error',
+                    title: 'Gagal mengubah Data Buku, Coba Lagi!',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    window.location.href = 'ubah.php';
+                });
+            </script></body>";
     }
 }
 

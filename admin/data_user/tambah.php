@@ -16,10 +16,18 @@ if(isset($_GET["tambah"])){
     $query = "INSERT INTO user VALUES ('','$nama','$username','$password','$role')";
     mysqli_query($koneksi, $query);
 
-    echo "<script>
-        alert('Berhasil menambahkan data');    
-        document.location.href = 'user.php';
-    </script>";
+    echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script>
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'Berhasil Menambahkan Data User',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                window.location.href = 'user.php';
+            });
+            </script></body>";
 }
 
 ?>

@@ -16,10 +16,18 @@ if(isset($_GET["tambah"])){
     $query = "INSERT INTO transaksi VALUES ('','$id_user','$id_buku','$jumlah','$total')";
     mysqli_query($koneksi, $query);
 
-    echo "<script>
-        alert('Berhasil menambahkan data');    
-        document.location.href = 'transaksi.php';
-    </script>";
+    echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script>
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'Berhasil Menambahkan Data Transaksi',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                window.location.href = 'transaksi.php';
+            });
+            </script></body>";
 }
 
 ?>

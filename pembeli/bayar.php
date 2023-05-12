@@ -23,10 +23,20 @@ if($id){
     $query1 = "INSERT INTO riwayat_transaksi VALUES ('','$id','$tanggal','$status')";
     mysqli_query($koneksi, $query1);
 
-    echo "<script>
-        alert('Berhasil membayar pesanan.');    
-        document.location.href = 'keranjang.php';
-    </script>";
+    echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Berhasil Membayar Pesanan.',
+            showConfirmButton: false,
+            timer: 1500
+        }).then(() => {
+            window.location.href = 'keranjang.php';
+        });
+    </script></body>";
+    exit;
 }
 
 ?>
+
