@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Bulan Mei 2023 pada 14.51
+-- Waktu pembuatan: 13 Bulan Mei 2023 pada 12.39
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -64,7 +64,8 @@ INSERT INTO `buku` (`id_buku`, `kategori`, `judul`, `penulis`, `harga`) VALUES
 (22, 'novel', 'EL', 'Luluk HF ', '99000'),
 (23, 'novel', 'Taman Sang Nabi', ' Kahlil Gibran ', '35000'),
 (24, 'novel', 'Komet', ' Tere Liye ', '71000'),
-(25, 'novel', 'Novel Dilan 2:Dia Adalah Dilanku Tahun 1991', ' Pidi Baiq ', '89000');
+(25, 'novel', 'Novel Dilan 2:Dia Adalah Dilanku Tahun 1991', ' Pidi Baiq ', '89000'),
+(26, 'Novel', 'Mariposa 3', 'Luluk', '93000');
 
 -- --------------------------------------------------------
 
@@ -216,7 +217,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT untuk tabel `keranjang`
