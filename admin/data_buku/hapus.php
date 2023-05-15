@@ -9,6 +9,12 @@ if($id_buku){
     $query = "DELETE FROM buku WHERE id_buku=$id_buku";
     mysqli_query($koneksi, $query);
 
+    $query1 = "DELETE FROM transaksi WHERE id_buku=$id_buku";
+    mysqli_query($koneksi, $query1);
+
+    $query2 = "DELETE FROM keranjang WHERE id_buku=$id_buku";
+    mysqli_query($koneksi, $query2);
+
     echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script>
         Swal.fire({

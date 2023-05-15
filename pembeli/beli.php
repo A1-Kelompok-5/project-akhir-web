@@ -245,7 +245,7 @@ if(isset($_GET["keranjang"])){
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="jumlah" id="jumlah" step="any" min="0" value="0">
+        <input type="number" class="form-control" name="jumlah" id="jumlah" step="any" min="0" value="0">
         <label for="jumlah">Jumlah</label>
       </div>
 

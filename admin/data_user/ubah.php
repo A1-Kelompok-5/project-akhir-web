@@ -218,22 +218,22 @@ if(isset($_POST["ubah"])){
         <input type="hidden" name="id_user" value="<?php echo $row['id_user'] ?>">
 
       <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="nama" value="<?php echo $row['nama'] ?>">
+        <input type="text" class="form-control" name="nama" value="<?php echo $row['nama'] ?>" required>
         <label for="nama">Nama</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="username" value="<?php echo $row['username'] ?>">
+        <input type="text" class="form-control" name="username" value="<?php echo $row['username'] ?>" required>
         <label for="username">Username</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="password" value="<?php echo $row['password'] ?>">
+        <input type="text" class="form-control" name="password" value="<?php echo $row['password'] ?>" required>
         <label for="password">Password</label>
       </div>
 
       <div class="form-floating">
-        <select class="form-select" name="role">
+        <select class="form-select" name="role" required>
           <option value="PEMBELI">Pembeli</option>
           <option value="ADMIN">Admin</option>
           <option value="PEMILIK">Pemilik</option>

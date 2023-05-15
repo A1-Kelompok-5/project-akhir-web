@@ -205,12 +205,12 @@ if(isset($_POST['login'])) {
       <h1 class="h3 mb-3 fw-normal">Masuk</h1>
   
       <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="username">
+        <input type="text" class="form-control mb-3" name="username" required>
         <label for="username">Username</label>
       </div>
 
       <div class="form-floating">
-        <input type="password" class="form-control" name="password">
+        <input type="password" class="form-control mb-3" name="password" required>
         <label for="password">Password</label>
       </div>
   

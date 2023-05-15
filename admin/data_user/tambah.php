@@ -175,22 +175,22 @@ if(isset($_GET["tambah"])){
       <h1 class="h3 mb-3 fw-normal">Tambah Data User</h1>
   
       <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="nama">
+        <input type="text" class="form-control" name="nama" required>
         <label for="nama">Nama</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="username">
+        <input type="text" class="form-control" name="username" required>
         <label for="username">Username</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="password">
+        <input type="text" class="form-control" name="password" required>
         <label for="password">Password</label>
       </div>
 
-      <div class="form-floating">
-        <select class="form-select" name="role">
+      <div class="form-floating" >
+        <select class="form-select" name="role" required>
           <option value="PEMBELI">Pembeli</option>
           <option value="ADMIN">Admin</option>
           <option value="PEMILIK">Pemilik</option>
