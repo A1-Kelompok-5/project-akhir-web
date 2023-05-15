@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Bulan Mei 2023 pada 12.39
+-- Waktu pembuatan: 15 Bulan Mei 2023 pada 08.05
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -40,7 +40,7 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id_buku`, `kategori`, `judul`, `penulis`, `harga`) VALUES
-(1, 'ilmu sosial', 'Aldera', 'Teddy Wibisana', '84000'),
+(1, 'ilmu sosial', 'Aldera 3', 'Teddy Wibisana', '84000'),
 (2, 'ilmu sosial', 'Cahaya Baru', 'Buya Hamka', '72000'),
 (3, 'ilmu sosial', 'Jalan Pulang', 'Kepustakaan Populer Grame', '93000'),
 (4, 'ilmu sosial', 'How to Grow Old', 'Marcus Tullius Cicero', '67000'),
@@ -64,8 +64,7 @@ INSERT INTO `buku` (`id_buku`, `kategori`, `judul`, `penulis`, `harga`) VALUES
 (22, 'novel', 'EL', 'Luluk HF ', '99000'),
 (23, 'novel', 'Taman Sang Nabi', ' Kahlil Gibran ', '35000'),
 (24, 'novel', 'Komet', ' Tere Liye ', '71000'),
-(25, 'novel', 'Novel Dilan 2:Dia Adalah Dilanku Tahun 1991', ' Pidi Baiq ', '89000'),
-(26, 'Novel', 'Mariposa 3', 'Luluk', '93000');
+(25, 'novel', 'Novel Dilan 2:Dia Adalah Dilanku Tahun 1991', ' Pidi Baiq ', '89000');
 
 -- --------------------------------------------------------
 
@@ -87,7 +86,9 @@ CREATE TABLE `keranjang` (
 
 INSERT INTO `keranjang` (`id`, `id_user`, `id_buku`, `jumlah`, `total`) VALUES
 (17, 5, 1, 1, 84000),
-(18, 5, 5, 1, 101000);
+(18, 5, 5, 1, 101000),
+(25, 5, 25, 4, 356000),
+(26, 5, 1, 2, 168000);
 
 -- --------------------------------------------------------
 
@@ -112,7 +113,9 @@ INSERT INTO `riwayat_transaksi` (`id_riwayat`, `id`, `tanggal`, `status`) VALUES
 (35, 15, '2023-05-10', 'BERHASIL'),
 (36, 19, '2023-05-10', 'BERHASIL'),
 (37, 20, '2023-05-10', 'BERHASIL'),
-(38, 21, '2023-05-10', 'BERHASIL');
+(38, 21, '2023-05-10', 'BERHASIL'),
+(39, 22, '2023-05-15', 'BERHASIL'),
+(40, 23, '2023-05-15', 'BERHASIL');
 
 -- --------------------------------------------------------
 
@@ -140,7 +143,9 @@ INSERT INTO `transaksi` (`id`, `id_user`, `id_buku`, `jumlah`, `total`) VALUES
 (23, 5, 5, '1', '101000'),
 (24, 5, 1, '5', '420000'),
 (25, 5, 1, '4', '336000'),
-(26, 5, 1, '7', '588000');
+(26, 5, 1, '7', '588000'),
+(30, 5, 25, '4', '356000'),
+(33, 5, 1, '2', '168000');
 
 -- --------------------------------------------------------
 
@@ -151,7 +156,7 @@ INSERT INTO `transaksi` (`id`, `id_user`, `id_buku`, `jumlah`, `total`) VALUES
 CREATE TABLE `user` (
   `id_user` int(100) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `username` varchar(30) NOT NULL,
+  `username` varchar(20) NOT NULL,
   `password` varchar(15) NOT NULL,
   `role` enum('PEMILIK','ADMIN','PEMBELI') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -168,7 +173,9 @@ INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `role`) VALUES
 (5, 'Pembeli Toko', 'pembeli', 'pembeli123', 'PEMBELI'),
 (6, 'madan', 'madhan', '123', 'PEMBELI'),
 (7, 'alya', 'alya', '123', 'PEMBELI'),
-(8, 'guest', 'p', '123', 'PEMBELI');
+(8, 'guest', 'p', '123', 'PEMBELI'),
+(9, '#', '#', '#', 'PEMBELI'),
+(10, '', '', '', 'PEMBELI');
 
 --
 -- Indexes for dumped tables
@@ -207,7 +214,8 @@ ALTER TABLE `transaksi`
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -217,31 +225,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_transaksi`
 --
 ALTER TABLE `riwayat_transaksi`
-  MODIFY `id_riwayat` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_riwayat` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -251,7 +259,7 @@ ALTER TABLE `user`
 -- Ketidakleluasaan untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  ADD CONSTRAINT `keranjang_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id_buku`),
+  ADD CONSTRAINT `keranjang_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id_buku`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `keranjang_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
@@ -259,7 +267,7 @@ ALTER TABLE `keranjang`
 --
 ALTER TABLE `transaksi`
   ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
-  ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id_buku`);
+  ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id_buku`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
