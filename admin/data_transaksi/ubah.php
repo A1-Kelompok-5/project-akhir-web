@@ -218,22 +218,22 @@ if(isset($_POST["ubah"])){
         <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
 
       <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="id_user" value="<?php echo $row['id_user'] ?>">
+        <input type="text" class="form-control" name="id_user" value="<?php echo $row['id_user'] ?>" required>
         <label for="id_user">ID User</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="id_buku" value="<?php echo $row['id_buku'] ?>">
+        <input type="text" class="form-control" name="id_buku" value="<?php echo $row['id_buku'] ?>" required>
         <label for="id_buku">ID Buku</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="jumlah" value="<?php echo $row['jumlah'] ?>">
+        <input type="text" class="form-control" name="jumlah" value="<?php echo $row['jumlah'] ?>" required>
         <label for="jumlah">Jumlah Buku</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="total" value="<?php echo $row['total'] ?>">
+        <input type="text" class="form-control" name="total" value="<?php echo $row['total'] ?>" required>
         <label for="total">Total</label>
       </div>
   

@@ -216,12 +216,12 @@ if(isset($_POST["ubah"])){
       <input type="hidden" name="id_riwayat" value="<?php echo $row['id_riwayat'] ?>">
 
       <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="id" value="<?php echo $row['id'] ?>">
+        <input type="text" class="form-control" name="id" value="<?php echo $row['id'] ?>" required>
         <label for="id">ID Transaksi</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="tanggal" value="<?php echo $row['tanggal'] ?>">
+        <input type="text" class="form-control" name="tanggal" value="<?php echo $row['tanggal'] ?>" required>
         <label for="tanggal">Tanggal</label>
       </div>
 

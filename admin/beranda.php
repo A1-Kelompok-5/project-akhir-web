@@ -185,7 +185,6 @@ if(!isset($_SESSION['role'])) {
                                 Ternyata pesan arwah nenek moyang itu benar-benar terwujud. “Akan datang kegelapan yang berderap, bersama ribuan kuda raksasa di kala malam. Mereka bangun setelah sekian lama, untuk menghancurkan Nusantara. Seorang lelaki dan seorang perempuan ditakdirkan membaurkan air di lautan dan api di pegunungan. Menyatukan tanah yang menghujam, dan udara yang terhampar.”
                                 Kisah tentang persahabatan, tentang jurang ego anak dan orangtua, tentang menyeimbangkan logika dan perasaan. Juga tentang melangkah menuju masa depan. Bahwa, apa pun yang menjadi luka masa lalu, biarlah mengering bersama waktu.</p>
                             
-                            <a href="#" class="btn btn-secondary">Beli Buku</a>
                         </div>
                     </div>
                 </div>
@@ -223,8 +222,7 @@ if(!isset($_SESSION['role'])) {
                             
                             <p class="card-text"><b>Sinopsis</b></p>
                             <p class="card-text text-justify">Laut Bercerita, novel terbaru Leila S. Chudori, bertutur tentang kisah keluarga yang kehilangan, sekumpulan sahabat yang merasakan kekosongan di dada, sekelompok orang yang gemar menyiksa dan lancar berkhianat, sejumlah keluarga yang mencari kejelasan makam anaknya, dan tentang cinta yang tak akan luntur.</p>
-                            
-                            <a href="#" class="btn btn-secondary">Beli Buku</a>
+
                         </div>
                     </div>
                 </div>
@@ -259,8 +257,7 @@ if(!isset($_SESSION['role'])) {
                             <p class="card-text text-justify">Hai, Miiko adalah serial komik Jepang yang telah diterjemahkan ke dalam Bahasa Indonesia. Ditulis dan diilustrasikan oleh Eriko Ono, komik bergenre komedi ini memiliki hampir 33 volume hingga saat ini. Bercerita tentang Yamada Miiko, seorang anak perempuan kelas empat yang sangat bersemangat dan memiliki kepribadian ceria baik di rumah maupun di sekolah.</p>                            
                             <p class="card-text"><b>Sinopsis</b></p>
                             <p class="card-text text-justify">Di episode kali ini, Oonishi Sensei tidak lagi menjadi guru untuk Miiko dan kawan-kawan. Miiko dan kawan-kawan resmi keluar sebagai lulusan murid-murid SD untuk menjadi murid-murid SMP bersama. Mari kita rayakan bersama momen berharga Miiko yang melangkah maju sebagai murid SMP! Hari-hari Miiko dan kawan-kawan di SD Suginoki telah usai. Seluruh kenangan di SD Suginoki jelas akan menjadi memori yang indah tidak hanya bagi Miiko dan kawan-kawan, namun juga para pembaca setia Miiko. Sambil menyimpan semua kenangan indah dalam hati, mereka kini mempersiapkan diri untuk menjadi murid SMP. Miiko dan kawan-kawan harus siap untuk banyak perubahan. Gedung sekolah baru, cinta baru, persahabatan baru, juga keseruan baru telah menanti Miiko dan kawan-kawan.</p>
-                            
-                            <a href="#" class="btn btn-secondary">Beli Buku</a>
+
                         </div>
                     </div>
                 </div>
@@ -299,8 +296,7 @@ if(!isset($_SESSION['role'])) {
                             <p class="card-text text-justify">Empat orang yang berteman sejak SMA bekerja di perusahaan yang sama meski beda nasib. Di usia 31 tahun, mereka berburu rumah idaman yang minimal nyerempet Jakarta. Kaluna, pegawai Bagian Umum, yang gajinya tak pernah menyentuh dua digit. Gadis ini bekerja sampingan sebagai model bibir, bermimpi membeli rumah demi keluar dari situasi tiga kepala keluarga yang bertumpuk di bawah satu atap. Di tengah perjuangannya menabung, Kaluna dirongrong oleh kekasihnya untuk pesta pernikahan mewah.
                                 Selain itu, ada juga masalah hutang keluarganya. Masalah-masalah ini menjadikan Kaluna merasa menjadi rakyat jelata saja tidak cukup membuat kepalanya mumet luar biasa. Tanisha, ibu satu anak yang menjalani Long Distance Marriage, mencari rumah murah dekat MRT yang juga bisa menampung mertuanya.
                                 Kamamiya, yang berambisi menjadi selebgram, mencari apartemen cantik untuk diunggah ke media sosial demi memenuhi gengsinya agar bisa menikah dengan pria kaya. Danan, anak tunggal tanpa beban yang akhirnya berpikir untuk berhenti hura-hura, dan membeli aset agar bisa pensiun dengan tenang. Apakah keempat sahabat ini berhasil menemukan rumah yang mampu mereka cicil? Dan apakah Kaluna bisa membentuk keluarga yang ia impikan?</p>
-    
-                            <a href="#" class="btn btn-secondary">Beli Buku</a>
+
                         </div>
                     </div>
                 </div>
@@ -335,8 +331,7 @@ if(!isset($_SESSION['role'])) {
                             <p class="card-text text-justify">Novel ini diangkat dari mitologi Korea. Novel ini cocok untuk penyuka film Spirited Away!</p>                            
                             <p class="card-text"><b>Sinopsis</b></p>
                             <p class="card-text text-justify">Badai mematikan telah merusak tanah kelahiran Mina selama beberapa generasi. Banjir menyapu seluruh desa, sementara perang berdarah dikobarkan untuk memperebutkan sumber daya yang tersisa. Masyarakat di desa Mina memercayai bahwa Dewa Laut mengutuk mereka dengan kematian dan keputusasaan. Dalam upaya untuk menenangkan Dewa Laut, setiap tahun seorang gadis cantik dibuang ke laut untuk menjadi pengantin Dewa Laut, dengan harapan suatu hari "pengantin sejati" akan dipilih dan mengakhiri penderitaan mereka. Shim Cheong adalah gadis tercantik di desa, sekaligus kekasih Joon. Banyak yang percaya dialah pengantin sejati Dewa Laut Tapi pada malam Cheong hendak dikorbankan, Joon mengikuti Cheong, meski tahu bahwa ikut campur akan dihadiahi hukuman mati. Untuk menyelamatkan kakaknya, Mina terjun ke air menggantikan Cheong. Kecantikan Mina memang tidak sebanding dengan para pengantin terdahulu. Tapi dia sudah tersapu ke Alam Roh. Kini Mina tak punya banyak waktu untuk menemukan Dewa Laut sebelum dirinya sendiri berubah menjadi arwah. Berbekal kemampuan mendongeng dan bantuan para arwah, Mina harus berhasil menemukan Dewa Laut.</p>
-    
-                            <a href="#" class="btn btn-secondary">Beli Buku</a>
+
                         </div>
                     </div>
                 </div>
@@ -374,8 +369,7 @@ if(!isset($_SESSION['role'])) {
                                 Dalam pergantian peristiwa yang tidak terduga, Aoi sangat menyukai Yuji. Yakin bahwa mereka adalah sahabat, Aoi bahkan melontarkan rencana timnya sendiri untuk membunuh Yuji. Sementara itu, Megumi dan yang lainnya mulai mengejar rival Kyoto mereka untuk melindungi Yuji juga.
                                 <br>Tim Tokyo dapat mengetahui skema Tim Kyoto. Megumi dan Maki kembali untuk melindungi Yuji, menghadapi saingan mereka karena mencoba membunuhnya. Sementara itu, Aoi menyadari potensi Yuji, dan memutuskan untuk membantu membawanya ke level berikutnya.
                                 Saat duel Yuji dengan Aoi, Todo mencapai klimaksnya, dia belajar apa artinya mencapai potensinya. Dengan keahlian membimbing Aoi, Yuji mulai tumbuh menuju tingkat kekuatan baru. Sementara itu, Mechamaru mendukung Momo dalam konfrontasinya dengan Nobara dan Panda.</p>
-    
-                            <a href="#" class="btn btn-secondary">Beli Buku</a>
+
                         </div>
                     </div>
                 </div>
@@ -392,28 +386,24 @@ if(!isset($_SESSION['role'])) {
         <h6 class="text-gramedia">Aka AKASAKA</6>
         <h5 class="fw-semibold text-gramedia">AKASHA : Oshi no Ko : Anak Idola 06</h5>
         <p><b>Rp. 48.000</b></p>
-        <p><a class="btn btn-secondary" href="buku.php">Beli Buku</a></p>
       </div>
       <div class="col-lg-3 border-end">
         <img src="../img/Blue_Lock_7.jpg" class="featurette-image rounded" widht="100" height="300" alt="Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false">
         <h6 class="text-gramedia">Muneyuki Kaneshiro</6>
         <h5 class="fw-semibold text-gramedia">Blue Lock 07</h5>
         <p><br><b>Rp. 45.000</b></p>
-        <p><a class="btn btn-secondary" href="buku.php">Beli Buku</a></p>
       </div>
       <div class="col-lg-3 border-end">
         <img src="../img/Akasha_Ito_Junju_Tomie.jpg" class="featurette-image rounded" widht="100" height="300" alt="Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false">
         <h6 class="text-gramedia">Ito Junji</6>
         <h5 class="fw-semibold text-gramedia">Akasha : Ito Junju - Tomie</h5>
         <p><b>Rp. 85.000</b></p>
-        <p><a class="btn btn-secondary" href="buku.php">Beli Buku</a></p>
       </div>
       <div class="col-lg-3">
         <img src="../img/Malioboro_at_Night.jpg" class="featurette-image rounded" widht="100" height="300" alt="Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false">
         <h6 class="text-gramedia">SKYPHIRE None</6>
         <h5 class="fw-semibold text-gramedia">Malioboro at Night</h5>
         <p><br><b>Rp. 99.000</b></p>
-        <p><a class="btn btn-secondary" href="buku.php">Beli Buku</a></p>
       </div>
 
       <hr class="featurette-divider">
@@ -423,28 +413,24 @@ if(!isset($_SESSION['role'])) {
         <h6 class="text-gramedia">Eka Kurniawan</6>
         <h5 class="fw-semibold text-gramedia">Corat-coret di Toilet</h5>
         <p><b>Rp. 79.000</b></p>
-        <p><a class="btn btn-secondary" href="buku.php">Beli Buku</a></p>
       </div>
       <div class="col-lg-3 border-end">
         <img src="../img/Dune_Bagian1.jpg" class="featurette-image rounded" widht="100" height="300" alt="Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false">
         <h6 class="text-gramedia">Frank Herbert</6>
         <h5 class="fw-semibold text-gramedia">DUNE: Bagian 1</h5>
         <p><b>Rp. 129.000</b></p>
-        <p><a class="btn btn-secondary" href="buku.php">Beli Buku</a></p>
       </div>
       <div class="col-lg-3 border-end">
         <img src="../img/The_Nightingale.jpg" class="featurette-image rounded" widht="100" height="300" alt="Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false">
         <h6 class="text-gramedia">Kristin Hannah</6>
         <h5 class="fw-semibold text-gramedia">The Nightingale</h5>
         <p><b>Rp. 170.000</b></p>
-        <p><a class="btn btn-secondary" href="buku.php">Beli Buku</a></p>
       </div>
       <div class="col-lg-3">
         <img src="../img/Teka_Teki_Rumah_Aneh.jpg" class="featurette-image rounded" widht="100" height="300" alt="Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false">
         <h6 class="text-gramedia">Uketsu None</6>
         <h5 class="fw-semibold text-gramedia">Teka-Teki Rumah Aneh</h5>
         <p><b>Rp. 79.000</b></p>
-        <p><a class="btn btn-secondary" href="buku.php">Beli Buku</a></p>
       </div>
     </div><!-- /.row -->
 

@@ -6,21 +6,46 @@ if(isset($_POST['daftar'])) {
     $nama = $_POST['nama'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $role = $_POST['role'];
+    $role = "PEMBELI" ;
+    // $role = $_POST['role'];
 
-    $select = "SELECT * FROM user WHERE nama='$nama' && password='$password'";
+
+    $select = "SELECT * FROM user WHERE username='$username'";
     $result = mysqli_query($koneksi, $select);
     if(isset($error)) {
         foreach($error as $error){
-            echo '$error';
+            echo '<span>'.$error.'</span>';
         }
     }
     if(mysqli_num_rows($result) > 0) {
         $error[] = 'User Tidak ada';
+        echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script>
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'error',
+                    title: 'Username Sudah Ada, Coba Lagi',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    window.location.href = 'daftar.php';
+                });
+                </script></body>";
     }else{
         $insert = "INSERT INTO user (nama, username, password, role) VALUES ('$nama', '$username', '$password', '$role')";
         mysqli_query($koneksi, $insert);
-        header('location:login.php');
+            echo "<body><script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                    <script>
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Berhasil Daftar Akun, Silahkan Login.',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                        window.location.href = 'login.php';
+                    });
+                    </script></body>";
     }
 
     //$query = mysqli_query($koneksi, "INSERT INTO user (nama, username, password, role) VALUES ('$nama'.'$username','$password','$role')");
@@ -157,26 +182,26 @@ if(isset($_POST['daftar'])) {
       <h1 class="h3 mb-3 fw-normal">Daftar</h1>
   
       <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="nama">
+        <input type="text" class="form-control mb-3" name="nama" required>
         <label for="nama">Nama</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="username">
+        <input type="text" class="form-control mb-3" name="username" required>
         <label for="username">Username</label>
       </div>
 
       <div class="form-floating">
-        <input type="password" class="form-control" name="password">
+        <input type="password" class="form-control mb-3" name="password" required>
         <label for="password">Password</label>
       </div>
 
-      <div class="form-floating">
+      <!-- <div class="form-floating">
         <select class="form-select" name="role">
           <option value="PEMBELI" selected>Pembeli</option>
         </select>
         <label for="role">Role</label>
-      </div>
+      </div> -->
   
       <button class="mt-5 w-100 btn btn-lg active" type="submit" name="daftar">Daftar</button>
       <p class="mt-3 text-muted">Sudah punya akun? <a href="login.php" class="link-info">Masuk disini</a></p>

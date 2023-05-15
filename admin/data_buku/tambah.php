@@ -174,22 +174,22 @@ if(isset($_GET["tambah"])){
       <h1 class="h3 mb-3 fw-normal">Tambah Data Buku</h1>
   
       <div class="form-floating mt-5">
-        <input type="text" class="form-control" name="kategori">
+        <input type="text" class="form-control" name="kategori" required>
         <label for="kategori">Kategori</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="judul">
+        <input type="text" class="form-control" name="judul" required>
         <label for="judul">Judul</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="penulis">
+        <input type="text" class="form-control" name="penulis" required>
         <label for="penulis">Penulis</label>
       </div>
 
       <div class="form-floating">
-        <input type="text" class="form-control" name="harga">
+        <input type="text" class="form-control" name="harga" required>
         <label for="harga">Harga</label>
       </div>
   
